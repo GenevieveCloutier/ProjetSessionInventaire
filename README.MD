@@ -16,7 +16,7 @@ Il sert à gérer l'inventaire de l'outillage: ajouter, modifier ou supprimer l'
 | ----------- | ----------- | ----------- |
 | Chicoine | Israël | 201298988
 | Cloutier | Geneviève | 199848753
-| Faria Novello Bhering | Paola |
+| Faria Novello Bhering | Paola | 206234537
 | Desmarais | Martine | 201098662
 
 
