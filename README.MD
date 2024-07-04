@@ -8,7 +8,7 @@ Il sert à gérer l'inventaire de l'outillage: ajouter, modifier ou supprimer l'
 ## Table des matières:
 
 1. [Présentation des membres](#présentation-des-membres)
-2. [Instruction d'installation](#instructions-dinstallation)
+2. [Instructions d'installation](#instructions-dinstallation)
 
 
 ## Présentation des membres
