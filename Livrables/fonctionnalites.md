@@ -32,7 +32,7 @@ I3 | Encryption des mots de passe | Encryption des mots passes dans la base de d
 I4 | Affichage des outils | Afficher tous les outils disponibles du catalogue | Utilisateur | N/A | 1 
 I5 | Filtre des outils | Filtrer le catalogue des outils selon les catégories | Utilisateur | N/A | 5 |
 I6 | Ajout d'outils | Ajouter de nouveaux outils dans la base de données et leurs caractérisques (Statut, Description, Quantité disponible) | Administrateur / Chef d'équipe | N/A | 1 |
-I7 | Modification ou suppression d'un outil | Enregistrer les modifications d'un outil (ex. changer la quantité disponible en inventaire) ou empĉher l'affichage d'un outil s'il n'est plus disponible | Administrateur / Chef d'équipe | N/A | 3 |
+I7 | Modification ou suppression d'un outil | Enregistrer les modifications d'un outil (ex. changer la quantité disponible en inventaire) ou empêcher l'affichage d'un outil s'il n'est plus disponible | Administrateur / Chef d'équipe | N/A | 3 |
 I8 | Inscription des locations | Insérer dans la base de données les informations concernant chaque location (Utilisateur, outil loué, durée de la location) | Utilisateur | N/A | 1
 I9 | Confirmation location / retour | Envoyer un courriel à l'utilisateur concerné lorsqu'un outil est loué ou rapporté | Utilisateur | N/A | 4
 I10 | Retour de location | Remettre disponible dans la base de données les outils rapportés | Administrateur / Chef d'équipe | N/A | 1
