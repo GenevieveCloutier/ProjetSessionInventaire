@@ -21,7 +21,7 @@ C9 | Modification d'une location | Page permettant la modification d'une locatio
 C10 | Durée de location | Afficher un menu déroulant permettant de spécifier la durée de la location | Utilisateur | N/A | 5
 C11 | Remise en stock | Page permettant de remettre un outil disponible lorsqu'il est rapporté | Administrateur / Chef d'équipe | N/A | 4
 C12 | Récapitulatif des locations | Afficher tous les outils en cours de location et leur date de retour prévue | Administrateur / Chef d'équipe | N/A | 4 
-C13 | Portail administrateur | Espace réservé aux administrateurs et chefs d'équipe pour permettre la gestion des fonctionnalités qui leurs sont réservées | N/A |3
+C13 | Portail administrateur | Espace réservé aux administrateurs et chefs d'équipe pour permettre la gestion des fonctionnalités qui leurs sont réservées | Administrateur / Chef d'équipe | N/A |3
 
 
 ## Fonctionnalités internes 
