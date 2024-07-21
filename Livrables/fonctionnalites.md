@@ -50,4 +50,4 @@ I15 | Filtre des locations | Filtrer les données de la base de données pour af
 <mark>I15</mark> | Profil utilisateur | Aller chercher dans la base de donnée les informations relatives à l'utilisateur | Utilisateur | N/A | 3
 <mark>C16</mark> | Modification profil | Enregistrer les modifications du profil de l'utilisateur dans la base de données | Utilisateur | N/A | 5
 <mark>I17</mark> | Catégories | Filtrer via la base de données les outils selon les catégories | Utilisateur | N/A |5
-<mark>I18</mark>Limite de location | Empêcher la location de nouveaux outils si l'utilisateur a des amandes impayées ou si il a plus de 10 outils en location | Utilisateur | N/A | 4
+<mark>I18</mark> | Limite de location | Empêcher la location de nouveaux outils si l'utilisateur a des amandes impayées ou si il a plus de 10 outils en location | Utilisateur | N/A | 4
