@@ -24,8 +24,8 @@ C12 | Récapitulatif des locations | Afficher tous les outils en cours de locati
 C13 | Portail administrateur | Espace réservé aux administrateurs et chefs d'équipe pour permettre la gestion des fonctionnalités qui leurs sont réservées | Administrateur / Chef d'équipe | N/A |3
 <mark>C14</mark> | Mot de passe oublié | Permet à l'utilisateur de réinitialiser son mot de passe. | Utilisateur | N/A | 3
 <mark>C15</mark> | Profil utilisateur | Afficher le profil de l'utilisateur (afficher les locations, informations personnelles ) | Utilisateur | N/A |3
-<mark>C17</mark> | Modification profil | Permettre à l'utilisateur de mettre à jour ses informations personnelles (Téléphone, mot de passe) | Utilisateur | N/A | 5
-<mark>C18</mark> | Catégories | Filtrer les outils par catégories dans le menu déroulant de l'entête | Utilisateur | N/A | 5
+<mark>C16</mark> | Modification profil | Permettre à l'utilisateur de mettre à jour ses informations personnelles (Téléphone, mot de passe) | Utilisateur | N/A | 5
+<mark>C17</mark> | Catégories | Filtrer les outils par catégories dans le menu déroulant de l'entête | Utilisateur | N/A | 5
 
 
 ## Fonctionnalités internes 
