@@ -46,7 +46,8 @@ I12 | Durée de location | Inscrire dans la base de donnée la durée prévue de
 I13 | Filtre des locations | Filtrer dans la base de données les locations pour un utilisateur (en cours et passées) | Utilisateur | N/A | 5
 I14 | Amende | En cas de perte d'un outil ou si la durée de la location est dépassée, inscrire une amande dans la base de données et envoyer un courriel à l'utilisateur concerné avec le détail des informations (outil perdu, montant de l'amande) | Administrateur / Chef d'équipe | N/A | 5 |
 I15 | Filtre des locations | Filtrer les données de la base de données pour afficher les outils en cours de location et la date de retour prévu | Administrateur / Chef d'équipe | N/A | 4
-<mark>I14</mark> | Mot de passe oublié | Inscrire le nouveau dans la base de données à la place de l'ancier | Utilisateur | N/A | 3
+<mark>I14</mark> | Mot de passe oublié | Inscrire le nouveau dans la base de données à la place de l'ancien | Utilisateur | N/A | 3
 <mark>I15</mark> | Profil utilisateur | Aller chercher dans la base de donnée les informations relatives à l'utilisateur | Utilisateur | N/A | 3
 <mark>C16</mark> | Modification profil | Enregistrer les modifications du profil de l'utilisateur dans la base de données | Utilisateur | N/A | 5
 <mark>I17</mark> | Catégories | Filtrer via la base de données les outils selon les catégories | Utilisateur | N/A |5
+<mark>I18</mark>Limite de location | Empêcher la location de nouveaux outils si l'utilisateur a des amandes impayées ou si il a plus de 10 outils en location | Utilisateur | N/A | 4
