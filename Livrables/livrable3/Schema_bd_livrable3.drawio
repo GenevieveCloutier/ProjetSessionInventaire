@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-08-05T02:05:54.509Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.8.2 Chrome/114.0.5735.289 Electron/25.8.1 Safari/537.36" etag="HZcpf0tqEjx8hCOUmuV2" version="21.8.2" type="device">
+<mxfile host="Electron" modified="2024-08-11T21:29:38.269Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.8.2 Chrome/114.0.5735.289 Electron/25.8.1 Safari/537.36" etag="d8f0sotDUkTUc_OAiPIA" version="21.8.2" type="device">
   <diagram name="Page-1" id="j_84Ol_rRc1WWKsA9hxo">
-    <mxGraphModel dx="2056" dy="818" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -50,7 +50,7 @@
           <mxGeometry x="260" y="20" width="310" height="30" as="geometry" />
         </mxCell>
         <mxCell id="dwD8XqkciGVuNtvJuvMU-15" value="Items (outils)" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="424" y="323" width="279" height="210" as="geometry" />
+          <mxGeometry x="424" y="323" width="279" height="240" as="geometry" />
         </mxCell>
         <mxCell id="dwD8XqkciGVuNtvJuvMU-16" value="id_outil &amp;lt;PK&amp;gt;: INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="dwD8XqkciGVuNtvJuvMU-15" vertex="1">
           <mxGeometry y="30" width="279" height="30" as="geometry" />
@@ -67,8 +67,11 @@
         <mxCell id="dwD8XqkciGVuNtvJuvMU-19" value="quantite: INT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="dwD8XqkciGVuNtvJuvMU-15" vertex="1">
           <mxGeometry y="150" width="279" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="dwD8XqkciGVuNtvJuvMU-33" value="statut: ENUM(&#39;Disponible&#39;, &#39;Emprunté&#39;, &#39;Supprimé&#39;)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="dwD8XqkciGVuNtvJuvMU-15" vertex="1">
+        <mxCell id="uvAZchUeGphAmQj9HwLX-1" value="image: BLOB" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="dwD8XqkciGVuNtvJuvMU-15">
           <mxGeometry y="180" width="279" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dwD8XqkciGVuNtvJuvMU-33" value="statut: ENUM(&#39;Disponible&#39;, &#39;Emprunté&#39;, &#39;Supprimé&#39;)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="dwD8XqkciGVuNtvJuvMU-15" vertex="1">
+          <mxGeometry y="210" width="279" height="30" as="geometry" />
         </mxCell>
         <mxCell id="dwD8XqkciGVuNtvJuvMU-29" value="Locations" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="520" y="580" width="200" height="240" as="geometry" />
