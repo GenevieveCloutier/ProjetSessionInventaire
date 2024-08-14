@@ -10,14 +10,26 @@ export const Items = sequelize.define("items", {
         type: DataTypes.STRING,
         allowNull: false
     },
+    categorie: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     quantite: {
         type: DataTypes.INTEGER,
         allowNull: false
-    }
+    },
+    image: {
+        type: DataTypes.BLOB,
+        allowNull: false
+    },
+    statut_item: {
+        type: DataTypes.ENUM('Disponible', 'Emprunté', 'Supprimé'),
+        allowNull: false
+    },
 });
 
-sequelize.sync().then(() => {
-    console.log('Intems table created successfully!');
+sequelize.sync({force:true}).then(() => {
+    console.log('Items table created successfully!');
 }).catch((error) => {
     console.error('Unable to create table : ', error);
 });

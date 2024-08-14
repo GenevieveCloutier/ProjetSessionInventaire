@@ -16,12 +16,24 @@ export const Users = sequelize.define("users", {
         type: DataTypes.STRING,
         allowNull: false
     },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    telephone: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     role_id: {
         type: DataTypes.INTEGER,
         references: {
             model: Roles,
             key: "id"
         },
+        allowNull: false
+    },
+    statut_user: {
+        type: DataTypes.ENUM('actif', 'inactif'),
         allowNull: false
     }
 });
@@ -34,7 +46,7 @@ Users.beforeCreate(async (user, option) => {
 Users.belongsTo(Roles, { foreignKey: 'role_id', as: 'role' });
 Roles.hasMany(Users, { foreignKey: 'role_id', as: 'users' });
 
-sequelize.sync().then(() => {
+sequelize.sync({force:true}).then(() => {
     console.log('Users table created successfully!');
 }).catch((error) => {
     console.error('Unable to create table : ', error);
