@@ -2,13 +2,14 @@
 
 <form method="POST" action="?/login">
 
-    <label for="nom">Nom</label>
+    <label for="Utilisateur">Utilisateur</label>
     <input type="text" name="nom" id="nom">
+<!--
 
     <label for="prenom">Prenom</label>
     <input type="text" name="prenom" id="prenom">
-
-    <label for="password">Password</label>
+-->
+    <label for="password">Mot de passe</label>
     <input type="password" name="password" id="password">
 
     <input type="submit" value="Login">
