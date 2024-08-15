@@ -24,16 +24,16 @@ export const Users = sequelize.define("users", {
         type: DataTypes.STRING,
         allowNull: false
     },
+    statut_user: {
+        type: DataTypes.ENUM('actif', 'inactif'),
+        allowNull: false
+    },
     role_id: {
         type: DataTypes.INTEGER,
         references: {
             model: Roles,
             key: "id"
         },
-        allowNull: false
-    },
-    statut_user: {
-        type: DataTypes.ENUM('actif', 'inactif'),
         allowNull: false
     }
 });

@@ -3,14 +3,6 @@ import { sequelize } from '../db.js';
 import { Locations } from './locations.model.js';
 
 export const Amandes = sequelize.define("amandes", {
-    id_location: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: Locations,
-            key: "id"
-        },
-        allowNull: false
-    },
     montant: {
         type: DataTypes.DECIMAL(10,2),
         allowNull: false
@@ -22,12 +14,19 @@ export const Amandes = sequelize.define("amandes", {
     statut_amande: {
         type: DataTypes.ENUM('Payé', 'Non payé'),
         allowNull: false
+    },
+    location_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: Locations,
+            key: "id"
+        },
+        allowNull: false
     }
 });
 
-// je n'ai pas regarder la video encore, je ne sais pas quoi faire avec cette partie
-//Users.belongsTo(Roles, { foreignKey: 'role_id', as: 'role' });
-//Roles.hasMany(Users, { foreignKey: 'role_id', as: 'users' });
+Amandes.belongsTo(Locations, { foreignKey: 'location_id', as: 'location' });
+Locations.hasOne(Amandes, { foreignKey: 'location_id', as: 'amande' });
 
 sequelize.sync({force:true}).then(() => {
     console.log('Amandes table created successfully!');
