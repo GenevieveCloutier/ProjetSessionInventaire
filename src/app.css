@@ -1,0 +1,50 @@
+
+    body{
+        color: black !important;
+        background-color: gray !important;
+        background-image: url("/src/images/fond.png");
+        background-repeat: repeat;
+        background-size: cover;
+        transform: scaleX(1) !important;
+        cursor: pointer !important;
+    }
+
+    #navbar {
+        height: 100px;
+        margin-top:50px;
+        background-color: black;
+    }
+
+    #navbar > img {
+        width: 100px;
+    }
+
+    .boite-1{
+        width: 80%;
+        background-color: white;
+        margin:auto;
+        margin-top: 30px;
+        padding: 50px;
+        border: 1px solid black;
+    }
+    .container{
+        display:flex;
+    }
+
+    a{
+        color:#695C4B;
+    }
+
+    table, th {
+        border: 1 px solid black;
+        border-collapse: collape;
+        background-color: #ebe9e9;
+        border:0.5px solid gray;
+        border-collapse: collapse;
+    }
+
+    th {
+        padding: 20px;
+    }
+
+

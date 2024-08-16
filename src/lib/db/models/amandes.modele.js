@@ -28,7 +28,7 @@ export const Amandes = sequelize.define("amandes", {
 Amandes.belongsTo(Locations, { foreignKey: 'location_id', as: 'location' });
 Locations.hasOne(Amandes, { foreignKey: 'location_id', as: 'amande' });
 
-sequelize.sync({force:true}).then(() => {
+sequelize.sync().then(() => {
     console.log('Amandes table created successfully!');
 }).catch((error) => {
     console.error('Unable to create table : ', error);

@@ -1,5 +1,5 @@
 <script>
-
+    import '/src/app.css';
     export let data;
 
     const amandes = data.amandes;
