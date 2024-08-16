@@ -47,7 +47,7 @@ Locations.belongsTo(Items, { foreignKey: 'item_id', as: 'item' });
 Items.hasMany(Locations, { foreignKey: 'item_id', as: 'locations' });
 
 
-sequelize.sync({force:true}).then(() => {
+sequelize.sync().then(() => {
     console.log('Locations table created successfully!');
 }).catch((error) => {
     console.error('Unable to create table : ', error);

@@ -1,4 +1,4 @@
-import { authenticate } from "../../lib/db/controllers/users.controller";
+import { authenticate } from "$lib/db/controllers/users.controller";
 
 export const actions = {
 

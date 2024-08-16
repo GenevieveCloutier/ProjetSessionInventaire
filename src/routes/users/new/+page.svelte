@@ -1,3 +1,7 @@
+<script>
+      import '/src/app.css';
+</script>
+
 <h1>New User</h1>
 
 <form method="POST" action="?/new">

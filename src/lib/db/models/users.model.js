@@ -46,7 +46,7 @@ Users.beforeCreate(async (user, option) => {
 Users.belongsTo(Roles, { foreignKey: 'role_id', as: 'role' });
 Roles.hasMany(Users, { foreignKey: 'role_id', as: 'users' });
 
-sequelize.sync({force:true}).then(() => {
+sequelize.sync().then(() => {
     console.log('Users table created successfully!');
 }).catch((error) => {
     console.error('Unable to create table : ', error);

@@ -1,10 +1,8 @@
 <script>
-
+    import '/src/app.css';
     export let data;
 
     const users = data.users;
-
-    console.log(users)
 
 </script>
 
