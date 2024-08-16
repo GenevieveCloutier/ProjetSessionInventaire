@@ -1,0 +1,53 @@
+import { DataTypes } from 'sequelize';
+import bcrypt from 'bcrypt';
+import { sequelize } from '../db.js';
+import { Roles } from './roles.model.js';
+
+export const Users = sequelize.define("users", {
+    nom: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    prenom: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    telephone: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    statut_user: {
+        type: DataTypes.ENUM('actif', 'inactif'),
+        allowNull: false
+    },
+    role_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: Roles,
+            key: "id"
+        },
+        allowNull: false
+    }
+});
+
+Users.beforeCreate(async (user, option) => {
+    user.password = await bcrypt.hash(user.password, 10);
+});
+
+
+Users.belongsTo(Roles, { foreignKey: 'role_id', as: 'role' });
+Roles.hasMany(Users, { foreignKey: 'role_id', as: 'users' });
+
+sequelize.sync({force:true}).then(() => {
+    console.log('Users table created successfully!');
+}).catch((error) => {
+    console.error('Unable to create table : ', error);
+});
