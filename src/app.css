@@ -9,13 +9,13 @@
         cursor: pointer !important;
     }
 
-    navbar {
+    #navbar {
         height: 100px;
         margin-top:50px;
         background-color: black;
     }
 
-    navbar > img{
+    #navbar > img{
         width: 100px;
     }
 
