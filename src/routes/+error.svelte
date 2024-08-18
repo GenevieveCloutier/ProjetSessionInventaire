@@ -6,7 +6,11 @@
 
 <div class="boite-1">
     <h1>{$page.error.message}</h1>
-<p>page temporaire et bouton temporaire pour gérer les erreurs au lieu de planter le serveur si il n'y pas de
-     données à afficher</p>
-     <a href = "/"><button>Retour à l'accueil</button></a>
+<p>OUPS! Une erreur s'est produit!</p>
+</div>
+<br><br>
+<div class="retour">
+    <a href = "/">RETOUR À LA PAGE D'ACCUEIL</a></div>
+<div class="logoNoir">
+    <img src="/src/images/logoNoir.png" alt="Logo image">
 </div>
