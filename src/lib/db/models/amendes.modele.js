@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize';
 import { sequelize } from '../db.js';
 import { Locations } from './locations.model.js';
 
-export const Amandes = sequelize.define("amandes", {
+export const Amendes = sequelize.define("amendes", {
     montant: {
         type: DataTypes.DECIMAL(10,2),
         allowNull: false
@@ -11,7 +11,7 @@ export const Amandes = sequelize.define("amandes", {
         type: DataTypes.STRING,
         allowNull: false
     },
-    statut_amande: {
+    statut_amende: {
         type: DataTypes.ENUM('Payé', 'Non payé'),
         allowNull: false
     },
@@ -25,11 +25,11 @@ export const Amandes = sequelize.define("amandes", {
     }
 });
 
-Amandes.belongsTo(Locations, { foreignKey: 'location_id', as: 'location' });
-Locations.hasOne(Amandes, { foreignKey: 'location_id', as: 'amande' });
+Amendes.belongsTo(Locations, { foreignKey: 'location_id', as: 'location' });
+Locations.hasOne(Amendes, { foreignKey: 'location_id', as: 'amende' });
 
 sequelize.sync().then(() => {
-    console.log('Amandes table created successfully!');
+    console.log('Amendes table created successfully!');
 }).catch((error) => {
     console.error('Unable to create table : ', error);
 });

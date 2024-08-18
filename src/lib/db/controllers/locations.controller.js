@@ -1,6 +1,6 @@
 import { Locations } from "../models/locations.model";
 import { Users } from "../models/users.model";
-import { Amandes } from "../models/amandes.modele";
+import { Amendes } from "../models/amendes.modele";
 import { Items } from "../models/items.model";
 
 /**
@@ -14,7 +14,7 @@ export async function findAll(){
     return await Locations.findAll({
         include: [
             { model: Users, as: "user" },
-            { model: Amandes, as: "amande" },
+            { model: Amendes, as: "amende" },
             { model : Items, as: "item" }
         ],
     }).then(resultat => {
@@ -22,7 +22,7 @@ export async function findAll(){
             ...location.dataValues,
             //si location.user existe, retourne le sinon, retourne null
             user: location.user ? location.user.dataValues : null,
-            amande: location.amande ? location.amande.dataValues : null,
+            amende: location.amende ? location.amende.dataValues : null,
             item : location.item ? location.item.dataValues : null
         }));
     })
@@ -43,7 +43,7 @@ export async function locationUser(p_where){
     return await Locations.findAll({
         include: [
             { model: Users, as: "user" },
-            { model: Amandes, as: "amande" },
+            { model: Amendes, as: "amende" },
             { model : Items, as: "item" }
         ],
         where:{
@@ -54,7 +54,7 @@ export async function locationUser(p_where){
             ...location.dataValues,
             //si location.user existe, retourne le sinon, retourne null
             user: location.user ? location.user.dataValues : null,
-            amande: location.amande ? location.amande.dataValues : null,
+            amende: location.amende ? location.amende.dataValues : null,
             item : location.item ? location.item.dataValues : null
         }));
     })
