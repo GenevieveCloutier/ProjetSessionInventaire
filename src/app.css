@@ -1,12 +1,12 @@
 
-    body{
+    :root body{
         color: black !important;
         background-color: gray !important;
         background-image: url("/src/images/fond.png");
         background-repeat: repeat;
         background-size: cover;
         transform: scaleX(1) !important;
-        cursor: pointer !important;
+        cursor: auto !important;
     }
 
     #navbar {
@@ -63,4 +63,12 @@ a{
     th {
         padding: 20px;
     }
+
+    td{
+        background-color: white;
+        border:0.5px solid gray;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+
 

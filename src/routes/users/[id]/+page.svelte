@@ -3,16 +3,17 @@
     export let data;
 
     const user = data.user;
-    //const locations = data.locations
+    const location = data.locations;
 
 </script>
 
+
 <div class="boite-1">
         <h1>Compte de {user.prenom}</h1>
+
     <div class="container">
         <div class="gauche">
             <h2>Locations</h2>
-            
             <table class="table-1">
                 <tr>
                     <th>Date d'emprunt</th>
@@ -21,17 +22,20 @@
                     <th>Outil loué</th>
                     <th>Statut</th>
                 </tr>
-               <!--{#each locations as location}
+ 
+                {#each location as location}
                 <tr>
                     <td>{location.date_emprunt}</td>
                     <td>{location.date_retour_prevue}</td>
-                    <td>{location.date_reotur_effective}</td>
-                    <td>{location.item.id}</td>
+                    <td>{location.date_retour_effective}</td>
+                    <td>{location.item.nom}</td>
                     <td>{location.statut_location}</td>
                 </tr>
-                {/each}--> 
+                {/each}
+        
             </table>
         </div>
+
 
         <div class="droite">
         <h2>Détails du compte</h2>
@@ -76,15 +80,15 @@
     .table-2{
         background-color: white;
         border:none;
-        padding-top: 30px;
     }
 
     .table-2 > tr > td{
         padding-top: 15px;
+        border:none;
     }
 
     .caseDroite{
-        width: 90%;
+        width: 85%;
         padding-left: 20px;
     }
 
