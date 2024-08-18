@@ -14,7 +14,7 @@ export const Locations = sequelize.define("locations", {
     },
     date_retour_effective: {
         type: DataTypes.STRING, // est-ce qu'on met un champs date à la place?
-        allowNull: false
+        allowNull: true
     },
     statut_location: {
         type: DataTypes.ENUM('En cours', 'Terminé'),
