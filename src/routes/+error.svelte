@@ -12,5 +12,5 @@
 <div class="retour">
     <a href = "/">RETOUR À LA PAGE D'ACCUEIL</a></div>
 <div class="logoNoir">
-    <img src="/src/images/logoNoir.png" alt="Logo image">
+    <img src="/src/images/logoNoir.png" alt="Logo">
 </div>

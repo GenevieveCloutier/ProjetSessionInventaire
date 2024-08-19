@@ -1,8 +1,9 @@
 <script>
-    import BoutonBrun from '../../../components/boutonBrun.svelte';
-    let fonction = undefined;
     import '/src/app.css';
     export let data;
+
+    import BoutonBrun from '../../../components/boutonBrun.svelte';
+    let fonction = undefined;
 
     const user = data.user;
     const location = data.locations;
@@ -57,13 +58,15 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td class="caseDroite" id="boutonEdit"><img src="/src/images/edit.png" alt="icone éditer"></td>
+                    <td class="caseDroite" id="boutonEdit">
+                        <a href = "{user.id}/editerProfil"><img src="/src/images/edit.png" alt="icone éditer"></a></td>
+                        
                 </tr>
             </table>
             
         </div>
     </div>
-    <BoutonBrun lien={"/users"} texte={"Retour au catalogue"} />
+    <BoutonBrun lien={"/items"} texte={"Retour au catalogue"} />
 </div>
 
 <style>

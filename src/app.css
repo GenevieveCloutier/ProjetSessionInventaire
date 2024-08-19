@@ -18,7 +18,10 @@
     #navbar > img{
         width: 100px;
     }
-
+    
+    .container{
+        display:flex;
+    }
     .boite-1{
         width: 40%;
         height: 350px;
@@ -44,9 +47,25 @@
         je n'aime pas l'effet dans le tableau, qui met le texte en gras partout*/
     }
 
-a{
-    color: black;
-}
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+      }
+    
+      .login-box {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 300px;
+      }
+
+    a{
+        color: black;
+    }
 
     .retour{
         color: black;
@@ -58,11 +77,6 @@ a{
         margin-top: -70px;
 
     }
-
-    .container{
-        display:flex;
-    }
-
 
     table, th {
         border: 1 px solid black;
