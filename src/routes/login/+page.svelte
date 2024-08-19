@@ -22,6 +22,8 @@
 </form>
 -->
 <script>
+  import Entete from '../../components/entete.svelte';
+
     let username = '';
     let password = '';
   
@@ -107,6 +109,7 @@
     }
   </style>
   
+  <Entete/>
   <div class="login-container">
     <div class="login-box">
       <h2>Connexion</h2>
