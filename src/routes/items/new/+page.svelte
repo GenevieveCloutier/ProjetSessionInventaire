@@ -10,5 +10,8 @@
     <label for="quantite">Quantite</label>
     <input type="number" name="quantite" id="quantite">
 
+    <label for="image">Insérer une image</label>
+    <input type="file" name="image" id="image">
+
     <input type="submit" value="Envoyer">
 </form>
