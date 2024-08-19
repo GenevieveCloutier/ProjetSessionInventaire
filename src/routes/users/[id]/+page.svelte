@@ -1,4 +1,6 @@
 <script>
+    import BoutonBrun from '../../../components/boutonBrun.svelte';
+    let fonction = undefined;
     import '/src/app.css';
     export let data;
 
@@ -61,6 +63,7 @@
             
         </div>
     </div>
+    <BoutonBrun lien={"/users"} texte={"Retour au catalogue"} />
 </div>
 
 <style>
