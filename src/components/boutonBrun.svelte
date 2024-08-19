@@ -1,8 +1,10 @@
 <script>
     export let texte;
+    export let lien;
+    export let fonction;
 </script>
 
-<button> {texte} </button>
+<a href={lien}><button on:click={fonction}> {texte} </button></a>
 
 <style>
     button{

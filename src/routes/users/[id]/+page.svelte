@@ -1,4 +1,6 @@
 <script>
+    import BoutonBrun from '../../../components/boutonBrun.svelte';
+    let fonction = undefined;
     import '/src/app.css';
     export let data;
 
@@ -8,7 +10,7 @@
 </script>
 
 
-<div class="boite-1">
+<div class="boite-2">
         <h1>Compte de {user.prenom}</h1>
 
     <div class="container">
@@ -61,6 +63,7 @@
             
         </div>
     </div>
+    <BoutonBrun lien={"/users"} texte={"Retour au catalogue"} />
 </div>
 
 <style>
