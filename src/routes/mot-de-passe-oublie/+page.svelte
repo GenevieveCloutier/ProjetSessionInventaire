@@ -1,4 +1,5 @@
 <script>
+    import Entete from '../../components/entete.svelte';
     let username = '';
     let email = '';
     let message = '';
@@ -73,6 +74,7 @@
     }
   </style>
   
+  <Entete/>
   <div class="mot-de-passe-oublie-container">
     <div class="mot-de-passe-oublie-box">
       <h2>Mot de passe oublié</h2>

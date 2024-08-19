@@ -10,7 +10,7 @@
     button{
         background-color: #695C4B;
         color: white;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size:medium;
         border-color: black;
         border-radius: 5px;

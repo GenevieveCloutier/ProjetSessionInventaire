@@ -4,9 +4,10 @@
     import '/src/app.css';
 </script>
 
-<div class="boite-1">
-    <h1>{$page.error.message}</h1>
-<p>OUPS! Une erreur s'est produit!</p>
+<div class="boite-3">
+        <div id=status><h1>{$page.status}</h1></div>
+        <p>OUPS!</p> 
+        <p>{$page.error.message}</p>
 </div>
 <br><br>
 <div class="retour">
