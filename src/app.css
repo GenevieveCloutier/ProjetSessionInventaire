@@ -15,25 +15,42 @@
         background-color: black;
     }
 
-    #navbar > img {
+    #navbar > img{
         width: 100px;
     }
 
-    .boite-2{
-        width: 80%;
+    .boite-1{
+        width: 40%;
+        height: 350px;
         background-color: white;
-        margin:auto;
-        margin-top: 30px;
+        margin: auto;
+        margin-top: 20px;
         padding: 50px;
         border: 1px solid black;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: xx-large;
+        text-align: center;
+        box-shadow: 2px 2px;
     }
+a{
+    color: black;
+}
+
+    .retour{
+        color: black;
+        text-align: center;
+        font-size:xx-large;
+    }
+    .logoNoir{
+        margin-left: 642px;
+        margin-top: -70px;
+
+    }
+
     .container{
         display:flex;
     }
 
-    a{
-        color:#695C4B;
-    }
 
     table, th {
         border: 1 px solid black;
