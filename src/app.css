@@ -21,17 +21,24 @@
 
     .boite-1{
         width: 40%;
-        height: 350px;
+        height: 400px;
         background-color: white;
         margin: auto;
-        margin-top: 20px;
+        margin-top: 100px;
         padding: 50px;
         border: 1px solid black;
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: xx-large;
         text-align: center;
-        box-shadow: 2px 2px;
+        box-shadow: 0.1em 0.1em 0.4em;
+        
     }
+    #status{
+       font-size: 50px;
+       line-height:60px;
+       filter: blur(1.5px);  
+    }
+
 a{
     color: black;
 }
@@ -39,11 +46,12 @@ a{
     .retour{
         color: black;
         text-align: center;
-        font-size:xx-large;
+        font-size:30px;
+        text-shadow: 0.1em 0.1em 0.8em;
     }
     .logoNoir{
-        margin-left: 642px;
-        margin-top: -70px;
+        margin-left: 37%;
+        margin-top: -90px;
 
     }
 

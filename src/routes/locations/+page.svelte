@@ -1,6 +1,7 @@
 <script>
 
     import '/src/app.css';
+    import Entete from '../../components/entete.svelte';
     export let data;
 
     const locations = data.locations;
@@ -9,6 +10,7 @@
 
 </script>
 
+<Entete/>
 <div class="boite-1">
     <h1>Locations</h1>
         {#each locations as location}

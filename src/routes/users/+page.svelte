@@ -1,11 +1,13 @@
 <script>
     import '/src/app.css';
     export let data;
+    import Entete from '../../components/entete.svelte';
 
     const users = data.users;
 
 </script>
 
+<Entete/>
 <div class="boite-1">
     <h1>Utilisateurs</h1>
 {#each users as user}
