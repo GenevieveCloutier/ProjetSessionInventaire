@@ -9,7 +9,7 @@
 
 </script>
 
-<div class="boite-1">
+<div class="boite-2">
     <h1>Locations</h1>
         {#each locations as location}
             id:{location.id}<br>

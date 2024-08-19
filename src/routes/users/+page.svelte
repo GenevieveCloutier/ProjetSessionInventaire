@@ -6,7 +6,7 @@
 
 </script>
 
-<div class="boite-1">
+<div class="boite-2">
     <h1>Utilisateurs</h1>
 {#each users as user}
     <h2>Utilisateur : {user.id}</h2>

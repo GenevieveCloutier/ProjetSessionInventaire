@@ -8,7 +8,7 @@
 </script>
 
 
-<div class="boite-1">
+<div class="boite-2">
         <h1>Compte de {user.prenom}</h1>
 
     <div class="container">
