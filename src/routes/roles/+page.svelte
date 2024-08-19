@@ -1,6 +1,7 @@
 <script>
     import '/src/app.css';
     export let data;
+    import Entete from '../../components/entete.svelte';
 
     const roles = data.roles;
 
@@ -8,6 +9,7 @@
 
 </script>
 
+<Entete/>
 <h1>Roles</h1>
 
 {#each roles as role}

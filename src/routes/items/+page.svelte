@@ -1,5 +1,6 @@
 <script>
     import '/src/app.css';
+    import Entete from '../../components/entete.svelte';
     export let data;
 
     const items = data.items;
@@ -8,6 +9,7 @@
 
 </script>
 
+<Entete/>
 <h1>Items</h1>
 
 {#each items as item}
