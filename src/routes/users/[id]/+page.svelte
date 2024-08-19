@@ -1,5 +1,6 @@
 <script>
     import '/src/app.css';
+    import Entete from '../../../components/entete.svelte';
     export let data;
 
     import BoutonBrun from '../../../components/boutonBrun.svelte';
@@ -9,9 +10,9 @@
     const location = data.locations;
 
 </script>
+<Entete />
 
-
-<div class="boite-2">
+<div class="boite-1">
         <h1>Compte de {user.prenom}</h1>
 
     <div class="container">

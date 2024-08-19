@@ -22,6 +22,18 @@
     .container{
         display:flex;
     }
+
+    .boite-1{
+        width: 80%;
+        background-color: white;
+        margin: auto;
+        margin-top: 20px;
+        padding: 50px;
+        border: 1px solid black;
+        /*font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        je n'aime pas l'effet dans le tableau, qui met le texte en gras partout*/
+    }
+    
     #boite-2{
         margin: auto;
         margin-top: 30px;
@@ -43,17 +55,6 @@
         font-size: xx-large;
         text-align: center;
         box-shadow: 2px 2px;
-    }
-    
-    .boite-2{
-        width: 80%;
-        background-color: white;
-        margin: auto;
-        margin-top: 20px;
-        padding: 50px;
-        border: 1px solid black;
-        /*font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        je n'aime pas l'effet dans le tableau, qui met le texte en gras partout*/
     }
 
     .login-container {

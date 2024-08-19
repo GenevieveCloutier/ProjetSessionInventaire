@@ -1,5 +1,6 @@
 <script>
     import BoutonSoumettre from '../../../../components/boutonSoumettre.svelte';
+	import Entete from '../../../../components/entete.svelte';
     let fonction = undefined;
     import '/src/app.css';
     export let data;
@@ -12,6 +13,7 @@
 
 </script>
 
+<Entete />
 <div class="login-container">
     <div class="login-box">
     <h1>Modifier mon profil</h1>
