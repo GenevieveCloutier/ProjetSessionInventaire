@@ -4,7 +4,7 @@
     import '/src/app.css';
 </script>
 
-<div class="boite-1">
+<div class="boite-3">
         <div id=status><h1>{$page.status}</h1></div>
         <p>OUPS!</p> 
         <p>{$page.error.message}</p>

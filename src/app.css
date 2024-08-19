@@ -19,18 +19,29 @@
         width: 100px;
     }
 
-
-    
     #boite-2{
-        
         margin: auto;
         margin-top: 30px;
         padding: 50px;
         border: 1px solid black;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: small;
         text-align: center;   
     }
+
+    .boite-3{
+        width: 40%;
+        height: 400px;
+        background-color: white;
+        margin: auto;
+        margin-top: 50px;
+        padding: 50px;
+        border: 1px solid black;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: xx-large;
+        text-align: center;
+        box-shadow: 2px 2px;
+    }
+    
     .grid-container {
         display: grid;
         grid-template-columns: auto auto auto;
