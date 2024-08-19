@@ -1,0 +1,74 @@
+
+    :root body{
+        color: black !important;
+        background-color: gray !important;
+        background-image: url("/src/images/fond.png");
+        background-repeat: repeat;
+        background-size: cover;
+        transform: scaleX(1) !important;
+        cursor: auto !important;
+    }
+
+    #navbar {
+        height: 100px;
+        margin-top:50px;
+        background-color: black;
+    }
+
+    #navbar > img{
+        width: 100px;
+    }
+
+    .boite-1{
+        width: 40%;
+        height: 350px;
+        background-color: white;
+        margin: auto;
+        margin-top: 20px;
+        padding: 50px;
+        border: 1px solid black;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: xx-large;
+        text-align: center;
+        box-shadow: 2px 2px;
+    }
+a{
+    color: black;
+}
+
+    .retour{
+        color: black;
+        text-align: center;
+        font-size:xx-large;
+    }
+    .logoNoir{
+        margin-left: 642px;
+        margin-top: -70px;
+
+    }
+
+    .container{
+        display:flex;
+    }
+
+
+    table, th {
+        border: 1 px solid black;
+        border-collapse: collape;
+        background-color: #ebe9e9;
+        border:0.5px solid gray;
+        border-collapse: collapse;
+    }
+
+    th {
+        padding: 20px;
+    }
+
+    td{
+        background-color: white;
+        border:0.5px solid gray;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+
+

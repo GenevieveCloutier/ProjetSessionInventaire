@@ -1,3 +1,7 @@
+<script>
+    import '/src/app.css';
+</script>
+
 <h1>Base du projet</h1>
 
 <section>

@@ -16,6 +16,18 @@ export const Users = sequelize.define("users", {
         type: DataTypes.STRING,
         allowNull: false
     },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    telephone: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    statut_user: {
+        type: DataTypes.ENUM('actif', 'inactif'),
+        allowNull: false
+    },
     role_id: {
         type: DataTypes.INTEGER,
         references: {

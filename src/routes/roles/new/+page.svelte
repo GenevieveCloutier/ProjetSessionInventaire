@@ -1,3 +1,7 @@
+<script>
+    import './styles.css';
+</script>
+
 <h1>New Role</h1>
 
 <form method="POST" action="?/new">
