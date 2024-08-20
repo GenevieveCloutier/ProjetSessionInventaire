@@ -27,6 +27,40 @@ export async function newUser(p_nom, p_prenom, p_role_id, p_password){
     });
 }
 
+
+/**
+ * Mise à jour du profil utilisateur
+ *
+ * @export
+ * @param {String} p_nom
+ * @param {String} p_prenom
+ * @param {String} p_telephone
+ * @param {String} p_email
+
+ */
+
+export async function updateUser(p_id, p_prenom, p_nom, p_telephone, p_email){
+     await Users.update(
+        {
+        prenom: p_prenom,
+        nom: p_nom,
+        telephone: p_telephone,
+        email: p_email
+    },
+    {
+        where: {
+            id: p_id,
+        }
+    }
+)
+    .then(resultat => {
+        return resultat.dataValues;
+    })
+    .catch((error)=>{
+        throw error;
+    });
+}
+
 /**
  * Va chercher tous les utilisateurs
  *
@@ -84,8 +118,6 @@ export async function findOne(p_where){
  * @returns {Object}
  */
 export async function authenticate(p_nom, p_prenom, p_password){
-    try{
-
         //Trouver l'utilisateur :
         const user = await findOne({ nom: p_nom, prenom: p_prenom });
 
@@ -96,8 +128,4 @@ export async function authenticate(p_nom, p_prenom, p_password){
         if(!goodPassword) throw "Mot de passe invalide";
 
         return user;
-
-    }catch(error){
-        throw error;
-    }
 }

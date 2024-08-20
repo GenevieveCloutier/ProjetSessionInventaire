@@ -1,9 +1,8 @@
 <script>
     import '/src/app.css';
     import Entete from '../../../components/entete.svelte';
-    export let data;
-
     import BoutonBrun from '../../../components/boutonBrun.svelte';
+    export let data;
     let fonction = undefined;
 
     const user = data.user;
@@ -43,7 +42,7 @@
 
         <div class="droite">
         <h2>Détails du compte</h2>
-            <a href="/">Modifier mon mot de passe</a>
+            <a href="/mot-de-passe-oublie">Modifier mon mot de passe</a><!--pas le bon lien..-->
             <table class="table-2">
                 <tr>
                     <td><img src="/src/images/user.png" alt="icone profil"></td>
@@ -101,6 +100,9 @@
 
     #boutonEdit{
         text-align: right;
+    }
+    a{
+        color: #695C4B;
     }
     
 </style>
