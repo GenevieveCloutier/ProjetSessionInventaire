@@ -19,6 +19,7 @@
     <h1>Modifier mon profil</h1>
     
     <form method="POST" action="?/editerProfil">
+        <input type="text" name="idUser" value={user.id} readonly hidden>
         <input type="text" name="prenom" value={user.prenom} on:click={effacerTexte} required><br><br>
         <input type="text" name="nom" value = {user.nom} on:click={effacerTexte} required ><br><br>
         <input type="text" name="telephone" value = {user.telephone} on:click={effacerTexte} required ><br><br>

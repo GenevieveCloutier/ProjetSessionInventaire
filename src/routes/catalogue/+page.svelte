@@ -3,11 +3,17 @@
     import Entete2liens from '../../components/entete2liens.svelte';
     import BoutonBrun from '../../components/boutonBrun.svelte';
     import BoutonGris from '../../components/boutonGris.svelte';
+    let fonction = undefined;
     export let data;
 
     const items = data.items;
 
     console.log(items)
+
+    function louer(){
+        // j'ai ajouté la fonction pour que le serveur ne plante pas
+        console.log("fonctionne")
+    }
 
 </script>
 

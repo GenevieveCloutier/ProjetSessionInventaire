@@ -1,10 +1,11 @@
 <script>
-   import BoutonGris from "./boutonGris.svelte";
-    //export let data; pourquoi faire? Je ne pense pas que ce soit nécessaire ici
+  import { page } from "$app/stores";
+  $:routeId = $page.route.id;
 
     function deconnecter(){
         console.log("fonctionne")
-    }
+    };
+    
 </script>
 
 <body data-sveltekit-preload-data="hover">
