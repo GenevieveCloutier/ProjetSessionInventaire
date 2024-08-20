@@ -1,17 +1,21 @@
 <script>
    import BoutonGris from "./boutonGris.svelte";
-    export let data;
+    //export let data; pourquoi faire? Je ne pense pas que ce soit nécessaire ici
 
     function deconnecter(){
-
+        console.log("fonctionne")
     }
 </script>
 
 <body data-sveltekit-preload-data="hover">
     <nav id="navbar">
-        <!-- svelte-ignore a11y-img-redundant-alt -->
-        <img src="/src/images/logoBlanc2.png" alt="Logo image">
-        <BoutonGris on:click(deconnecter) texte="Déconnexion" id="boutonGris"></BoutonGris>
+        <!-- tu avais une erreur à cause du mot image dans ton alt, svelte dit que c'est un doublon 
+         et pas nécessaire de mettre ce mot -->
+        <img src="/src/images/logoBlanc2.png" alt="Logo">
+
+        <BoutonGris fonction = {deconnecter} texte="Déconnexion"></BoutonGris>
+        <!-- Ton code pour que tu voies les erreurs, Martine:
+        <BoutonGris on:click(deconnecter) texte="Déconnexion" id="boutonGris"></BoutonGris>-->
     </nav>
 
 </body>
