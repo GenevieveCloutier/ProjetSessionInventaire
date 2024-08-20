@@ -16,7 +16,7 @@
         border-radius: 5px;
         margin: 5px;
         padding: 5px;
-        color: white;
+        color: black;
         padding: 10px;
         cursor: pointer;
     }

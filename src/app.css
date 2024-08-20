@@ -30,8 +30,6 @@
         margin-top: 20px;
         padding: 50px;
         border: 1px solid black;
-        /*font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        je n'aime pas l'effet dans le tableau, qui met le texte en gras partout*/
     }
     
     #boite-2{
@@ -78,15 +76,15 @@
         display: grid;
         grid-template-columns: auto auto auto;
         margin-top: 20px;
-        margin-left: 80px;
-        padding: 40px;
+        margin-left: 70px;
+        padding: 20px;
       }
     
-      .grid-item {
-        width: 380px;
-        height: 400px;
+    .grid-item {
+        width: 370px;
+        height: 500px;
         background-color: white;
-        padding: 20px;
+        padding: 15px;
         text-align: center;
       } 
     #status{
