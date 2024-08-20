@@ -18,7 +18,22 @@
     #navbar > img{
         width: 100px;
     }
+    
+    .container{
+        display:flex;
+    }
 
+    .boite-1{
+        width: 80%;
+        background-color: white;
+        margin: auto;
+        margin-top: 20px;
+        padding: 50px;
+        border: 1px solid black;
+        /*font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        je n'aime pas l'effet dans le tableau, qui met le texte en gras partout*/
+    }
+    
     #boite-2{
         margin: auto;
         margin-top: 30px;
@@ -41,17 +56,22 @@
         text-align: center;
         box-shadow: 2px 2px;
     }
+
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+      }
     
-    .boite-2{
-        width: 80%;
+      .login-box {
         background-color: white;
-        margin: auto;
-        margin-top: 20px;
-        padding: 50px;
-        border: 1px solid black;
-        /*font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        je n'aime pas l'effet dans le tableau, qui met le texte en gras partout*/
-    }
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 300px;
+      }
 
     
     .grid-container {
@@ -75,9 +95,9 @@
        filter: blur(1.5px);  
     }
 
-a{
-    color: black;
-}
+    a{
+        color: black;
+    }
 
     .retour{
         color: black;
@@ -90,11 +110,6 @@ a{
         margin-top: -90px;
 
     }
-
-    .container{
-        display:flex;
-    }
-
 
     table, th {
         border: 1 px solid black;

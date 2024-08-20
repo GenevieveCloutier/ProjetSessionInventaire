@@ -1,16 +1,18 @@
 <script>
+    import '/src/app.css';
+    import Entete from '../../../components/entete.svelte';
+    export let data;
+
     import BoutonBrun from '../../../components/boutonBrun.svelte';
     let fonction = undefined;
-    import '/src/app.css';
-    export let data;
 
     const user = data.user;
     const location = data.locations;
 
 </script>
+<Entete />
 
-
-<div class="boite-2">
+<div class="boite-1">
         <h1>Compte de {user.prenom}</h1>
 
     <div class="container">
@@ -57,13 +59,15 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td class="caseDroite" id="boutonEdit"><img src="/src/images/edit.png" alt="icone éditer"></td>
+                    <td class="caseDroite" id="boutonEdit">
+                        <a href = "{user.id}/editerProfil"><img src="/src/images/edit.png" alt="icone éditer"></a></td>
+                        
                 </tr>
             </table>
             
         </div>
     </div>
-    <BoutonBrun lien={"/users"} texte={"Retour au catalogue"} />
+    <BoutonBrun lien={"/items"} texte={"Retour au catalogue"} />
 </div>
 
 <style>

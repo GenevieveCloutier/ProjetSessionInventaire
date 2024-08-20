@@ -13,6 +13,5 @@
 <div class="retour">
     <a href = "/">RETOUR À LA PAGE D'ACCUEIL</a></div>
 <div class="logoNoir">
-    <!-- svelte-ignore a11y-img-redundant-alt -->
-    <img src="/src/images/logoNoir.png" alt="Logo image">
+    <img src="/src/images/logoNoir.png" alt="Logo">
 </div>

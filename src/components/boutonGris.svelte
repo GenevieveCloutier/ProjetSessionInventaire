@@ -1,8 +1,10 @@
 <script>
     export let texte;
+    export let lien;
+    export let fonction;
 </script>
 
-<button> {texte} </button>
+<a href={lien}><button on:click={fonction}> {texte} </button></a>
 
 <style>
     button{
@@ -14,5 +16,8 @@
         border-radius: 5px;
         margin: 5px;
         padding: 5px;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
     }
 </style>
