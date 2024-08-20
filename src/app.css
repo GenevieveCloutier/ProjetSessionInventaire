@@ -8,16 +8,6 @@
         transform: scaleX(1) !important;
         cursor: auto !important;
     }
-
-    #navbar {
-        height: 100px;
-        margin-top:50px;
-        background-color: black;
-    }
-
-    #navbar > img{
-        width: 100px;
-    }
     
     .container{
         display:flex;
