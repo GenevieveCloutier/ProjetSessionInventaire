@@ -9,7 +9,7 @@
 
 <Entete/>
 <div class="boite-1">
-    <h1>Utilisateurs</h1>
+    <h1>Utilisateursss</h1>
 {#each users as user}
     <h2>Utilisateur : {user.id}</h2>
     <p>{user.nom}</p>
