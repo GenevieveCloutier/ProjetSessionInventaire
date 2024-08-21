@@ -1,7 +1,3 @@
-<script>
-	import '../app.css';
-</script>
-
 <!--
     ATTENTION!!!
 
@@ -9,13 +5,13 @@
 
 -->
 
-<slot></slot>
-
 <style>
-	:global(body) {
-		color: blue !important;
-		background-color: red !important;
-		transform: scaleX(-1) !important;
-		cursor: cell !important;
-	}
+    :global(body){
+        color: blue !important;
+        background-color: red !important;
+        transform: scaleX(-1) !important;
+        cursor: cell !important;
+    }
 </style>
+
+<slot/>
