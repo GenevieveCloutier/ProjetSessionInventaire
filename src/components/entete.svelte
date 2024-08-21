@@ -1,5 +1,6 @@
 <script>
     import { page } from "$app/stores";
+
     $:routeId = $page.route.id;
   
       function deconnecter(){
@@ -10,11 +11,10 @@
   
   <body data-sveltekit-preload-data="hover">
       <nav id="navbar">
-  <!--tu avais une erreur à cause du mot image dans ton alt, svelte dit que c'est un doublon, pas nécessaire de mettre ce mot-->
           <a href = "/"> <img src="/src/images/logoBlanc2.png" class="imageEntete" alt="Logo"></a>
           <a href = "/catalogue" class:active = {routeId == '/catalogue'} class="catalogue">Catalogue</a>
-          <!--mettre à jour avec user_id quand login est fini-->
-          <a href = "/users" class:active = {routeId == '/users'} class="compte" >Mon compte</a>
+          <a href = "/users" class:active = {routeId == '/users/[id]'} class="compte" >Mon compte</a>
+<!-- changer le lien de /users pour aller chercher le compte de l'utilisateur connecté-->
           <button class="deconnexion" on:click={deconnecter}>Déconnexion</button>
        </nav>
    </body>

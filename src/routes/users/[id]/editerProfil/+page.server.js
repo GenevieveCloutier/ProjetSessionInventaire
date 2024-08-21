@@ -19,7 +19,6 @@ export async function load({ params }){
     return { user:user, locations:locations };
 };
 
-// fonctionne mais ne met pas les modifs dans la BD
 export const actions = {
   editerProfil: async ({ cookies, request }) => {
     const data = await request.formData();

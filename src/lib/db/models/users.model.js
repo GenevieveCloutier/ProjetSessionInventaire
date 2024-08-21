@@ -18,15 +18,15 @@ export const Users = sequelize.define("users", {
     },
     email: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true //remettre false
     },
     telephone: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true //remettre false
     },
     statut_user: {
         type: DataTypes.ENUM('actif', 'inactif'),
-        allowNull: false
+        allowNull: true //remettre false
     },
     role_id: {
         type: DataTypes.INTEGER,
@@ -35,13 +35,22 @@ export const Users = sequelize.define("users", {
             key: "id"
         },
         allowNull: false
-    }
+    },
 });
 
-Users.beforeCreate(async (user, option) => {
+Users.addHook('beforeCreate',(async (user, option) => {
     user.password = await bcrypt.hash(user.password, 10);
-});
+}));
 
+// user.password = undefined, donc il ne le crypte pas... :(
+Users.addHook('beforeBulkUpdate',(async(user, option)=> {
+    if (user.password) {
+        console.log(user.password + "mot de passe bycrypt" )
+        const salt = await bcrypt.genSaltSync(10, 'a');
+        user.password = bcrypt.hashSync(user.password, salt);
+        }
+    }
+));
 
 Users.belongsTo(Roles, { foreignKey: 'role_id', as: 'role' });
 Roles.hasMany(Users, { foreignKey: 'role_id', as: 'users' });

@@ -52,4 +52,34 @@ export async function findOne(p_where){
     }).catch((error) => {
         throw error;
     });
-}
+};
+
+
+/**
+ * Mise à jour d'un rôle
+ *
+ * @export
+ * @param {Number} p_id
+ * @param {String} p_nom
+ * @param {String} p_description
+ */
+
+export async function updateRole(p_id, p_nom, p_description,){
+    await Roles.update(
+       {
+       nom: p_nom,
+       description: p_description
+   },
+   {
+       where: {
+           id: p_id,
+       }
+   }
+)
+   .then(resultat => {
+       return resultat.dataValues;
+   })
+   .catch((error)=>{
+       throw error;
+   });
+};

@@ -32,6 +32,7 @@ export async function newUser(p_nom, p_prenom, p_role_id, p_password){
  * Mise à jour du profil utilisateur
  *
  * @export
+ * @param {Number} p_id
  * @param {String} p_nom
  * @param {String} p_prenom
  * @param {String} p_telephone
@@ -59,7 +60,36 @@ export async function updateUser(p_id, p_prenom, p_nom, p_telephone, p_email){
     .catch((error)=>{
         throw error;
     });
+};
+
+/**
+ * Changement de mot de passe
+ *
+ * @export
+ * @param {Number} p_id
+ * @param {String} p_password
+ */
+
+export async function updatePassword(p_id, p_password){
+    await Users.update(
+       {
+       password: p_password,
+   },
+   {
+       where: {
+           id: p_id,
+       },
+       individualHooks: true,
+   }
+)
+   .then(resultat => {
+       return resultat.dataValues;
+   })
+   .catch((error)=>{
+       throw error;
+   });
 }
+
 
 /**
  * Va chercher tous les utilisateurs

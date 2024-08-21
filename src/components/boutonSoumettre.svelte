@@ -13,10 +13,11 @@
       color: white;
       font-size: 1rem;
       cursor: pointer;
+      margin:auto;
     }
   
     button:hover {
-      background-color: #695C4B;
+      background-color: gray;
     }
     
 </style>

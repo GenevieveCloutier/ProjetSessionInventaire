@@ -1,22 +1,17 @@
-<script>
-    import '/src/app.css';
-    export let data;
-    import Entete from '../../components/entete.svelte';
+<h1>New User</h1>
 
-    const users = data.users;
+<form method="POST" action="?/new">
+    <label for="nom">Nom</label>
+    <input type="text" name="nom" id="nom">
 
-</script>
+    <label for="prenom">Prénom</label>
+    <input type="text" name="prenom" id="prenom">
 
-<Entete/>
-<div class="boite-1">
-    <h1>Utilisateurs</h1>
-{#each users as user}
-    <h2>Utilisateur : {user.id}</h2>
-    <p>{user.nom}</p>
-    <p>{user.prenom}</p>
-    <p>Role : {user.role.nom}</p>
-    <p>Description role : {user.role.description}</p>
-    <p>Password : {user.password}</p>
-    <a href="./users/{user.id}">Lien</a>
-{/each}
-</div>
+    <label for="role">Role Id</label>
+    <input type="number" name="role" id="role">
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password">
+
+    <input type="submit" value="Envoyer">
+</form>
