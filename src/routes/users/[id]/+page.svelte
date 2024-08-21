@@ -42,7 +42,7 @@
 
         <div class="droite">
         <h2>Détails du compte</h2>
-            <a href="/mot-de-passe-oublie">Modifier mon mot de passe</a><!--pas le bon lien..-->
+            <a href="/users/{user.id}/editerMDP">Modifier mon mot de passe</a>
             <table class="table-2">
                 <tr>
                     <td><img src="/src/images/user.png" alt="icone profil"></td>
