@@ -1,6 +1,4 @@
-<script>
-	import '../app.css';
-</script>
+
 
 <!--
     ATTENTION!!!
@@ -9,7 +7,7 @@
 
 -->
 
-<slot></slot>
+
 
 <style>
 	:global(body) {
@@ -19,3 +17,5 @@
 		cursor: cell !important;
 	}
 </style>
+
+<slot/>

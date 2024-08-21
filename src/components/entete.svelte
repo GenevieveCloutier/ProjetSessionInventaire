@@ -1,5 +1,6 @@
 <script>
   import { page } from "$app/stores";
+  import BoutonGris from "./boutonGris.svelte";
   $:routeId = $page.route.id;
 
     function deconnecter(){
@@ -11,8 +12,7 @@
 <body data-sveltekit-preload-data="hover">
     <div id="navbar">
         <img src="/src/images/logoBlanc2.png" alt="Logo">
-
-        <BoutonGris fonction = {deconnecter} texte="Déconnexion"></BoutonGris>
+        <BoutonGris lien={"/login"} texte={"Déconnexion"}/>
     </div>
 
 </body>

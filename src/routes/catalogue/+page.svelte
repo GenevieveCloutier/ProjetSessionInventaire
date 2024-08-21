@@ -1,6 +1,6 @@
 <script>
     import '/src/app.css';
-    import Entete2liens from '../../components/entete2liens.svelte';
+    import Entete from '../../components/entete.svelte';
     import BoutonBrun from '../../components/boutonBrun.svelte';
     import BoutonGris from '../../components/boutonGris.svelte';
     let fonction = undefined;
@@ -17,7 +17,7 @@
 
 </script>
 
-<Entete2liens/>
+<Entete/>
 <div id="barreRecherche">
 
     
