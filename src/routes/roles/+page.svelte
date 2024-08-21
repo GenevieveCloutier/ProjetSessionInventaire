@@ -1,20 +1,15 @@
 <script>
-    import '/src/app.css';
-    export let data;
-    import Entete from '../../components/entete.svelte';
-
-    const roles = data.roles;
-
-    console.log(roles)
-
+    import './styles.css';
 </script>
 
-<Entete/>
-<h1>Roles</h1>
+<h1>New Role</h1>
 
-{#each roles as role}
-    <h2>Role : {role.id}</h2>
-    <p>{role.nom}</p>
-    <p>{role.description}</p>
-    <a href="./roles/{role.id}">Lien</a>
-{/each}
+<form method="POST" action="?/new">
+    <label for="nom">Nom</label>
+    <input type="text" name="nom" id="nom">
+
+    <label for="description">Description</label>
+    <input type="text" name="description" id="description">
+
+    <input type="submit" value="Envoyer">
+</form>

@@ -1,122 +1,124 @@
 
-    :root body{
-        color: black !important;
-        background-color: gray !important;
-        background-image: url("/src/images/fond.png");
-        background-repeat: repeat;
-        background-size: cover;
-        transform: scaleX(1) !important;
-        cursor: auto !important;
-    }
+:root body{
+    color: black !important;
+    background-color: gray !important;
+    background-image: url("/src/images/fond.png");
+    background-repeat: repeat;
+    background-size: cover;
+    transform: scaleX(1) !important;
+    cursor: auto !important;
+}
+
+.container{
+    display:flex;
+}
+
+.boite-1{
+    width: 80%;
+    background-color: white;
+    margin: auto;
+    margin-top: 20px;
+    padding: 50px;
+    border: 1px solid black;
+    /*font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    je n'aime pas l'effet dans le tableau, qui met le texte en gras partout*/
+}
+
+#boite-2{
+    margin: auto;
+    margin-top: 30px;
+    padding: 50px;
+    border: 1px solid black;
+    font-size: small;
+    text-align: center;   
+}
+
+.boite-3{
+    width: 40%;
+    height: 400px;
+    background-color: white;
+    margin: auto;
+    margin-top: 50px;
+    padding: 50px;
+    border: 1px solid black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    text-align: center;
+    box-shadow: 2px 2px;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .login-box {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+  }
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-top: 20px;
+    margin-left: 80px;
+    padding: 40px;
+  }
+
+  .grid-item {
+    width: 380px;
+    height: 400px;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+  } 
+#status{
+   font-size: 50px;
+   line-height:60px;
+   filter: blur(1.5px);  
+}
+
+a{
+    color: black;
+}
+
+.retour{
+    color: black;
+    text-align: center;
+    font-size:30px;
+    text-shadow: 0.1em 0.1em 0.8em;
+}
+.logoNoir{
+    margin-left: 37%;
+    margin-top: -90px;
+
+}
+
+table, th {
+    border: 1 px solid black;
+    border-collapse: collape;
+    background-color: #ebe9e9;
+    border:0.5px solid gray;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 20px;
+}
+
+td{
+    background-color: white;
+    border:0.5px solid gray;
+    border-collapse: collapse;
+    padding: 10px;
     
-    .container{
-        display:flex;
-    }
-
-    .boite-1{
-        width: 80%;
-        background-color: white;
-        margin: auto;
-        margin-top: 20px;
-        padding: 50px;
-        border: 1px solid black;
-    }
-    
-    #boite-2{
-        margin: auto;
-        margin-top: 30px;
-        padding: 50px;
-        border: 1px solid black;
-        font-size: small;
-        text-align: center;   
-    }
-
-    .boite-3{
-        width: 40%;
-        height: 400px;
-        background-color: white;
-        margin: auto;
-        margin-top: 50px;
-        padding: 50px;
-        border: 1px solid black;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: xx-large;
-        text-align: center;
-        box-shadow: 2px 2px;
-    }
-
-    .login-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
-      }
-    
-      .login-box {
-        background-color: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        width: 300px;
-      }
-
-    
-    .grid-container {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        margin-top: 20px;
-        margin-left: 70px;
-        padding: 20px;
-      }
-    
-    .grid-item {
-        width: 370px;
-        height: 500px;
-        background-color: white;
-        padding: 15px;
-        text-align: center;
-      } 
-    #status{
-       font-size: 50px;
-       line-height:60px;
-       filter: blur(1.5px);  
-    }
-
-    a{
-        color: black;
-    }
-
-    .retour{
-        color: black;
-        text-align: center;
-        font-size:30px;
-        text-shadow: 0.1em 0.1em 0.8em;
-    }
-    .logoNoir{
-        margin-left: 37%;
-        margin-top: -90px;
-
-    }
-
-    table, th {
-        border: 1 px solid black;
-        border-collapse: collape;
-        background-color: #ebe9e9;
-        border:0.5px solid gray;
-        border-collapse: collapse;
-    }
-
-    th {
-        padding: 20px;
-    }
-
-    td{
-        background-color: white;
-        border:0.5px solid gray;
-        border-collapse: collapse;
-        padding: 10px;
-        
-    }
+}
 
 
