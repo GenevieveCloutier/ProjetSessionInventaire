@@ -19,7 +19,7 @@
 <Entete/>
 <div class="boite-1">
     <h1>Utilisateurs</h1>
-    <p {pasDeDonnees}>Aucun utilisateur à afficher</p>
+    <p>Aucun utilisateur à afficher</p>
 {#each users as user}
 
     <h2>Utilisateur : {user.id}</h2>

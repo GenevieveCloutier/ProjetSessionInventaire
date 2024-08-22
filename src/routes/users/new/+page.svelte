@@ -17,7 +17,7 @@
 </form>  
 -->
 <script>
-    //import Entete from '../../components/entete.svelte';
+      import Entete from "../../../components/entete.svelte";
   
     let nom = '';
     let prenom = '';
@@ -34,8 +34,48 @@
       console.log('Mot de passe:', password);
       console.log('Rôle:', role);
     }
+
   </script>
   
+
+  
+  <Entete />
+
+  <div class="form-container">
+    <div class="form-box">
+      <h2>Créer un nouvel utilisateur</h2>
+      <form on:submit|preventDefault={handleSubmit}>
+        <div class="input-group">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" bind:value={nom} required>
+        </div>
+        <div class="input-group">
+          <label for="prenom">Prénom</label>
+          <input type="text" id="prenom" bind:value={prenom} required>
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" bind:value={email} required>
+        </div>
+        <div class="input-group">
+          <label for="telephone">Téléphone</label>
+          <input type="tel" id="telephone" bind:value={telephone} required>
+        </div>
+        <div class="input-group">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" bind:value={password} required>
+        </div>
+        <div class="role-group">
+          <label>Rôle</label>
+          <label><input type="radio" name="role" value="Employé" bind:group={role} required> Employé</label>
+          <label><input type="radio" name="role" value="Administrateur" bind:group={role} required> Administrateur</label>
+          <label><input type="radio" name="role" value="Chef d'équipe" bind:group={role} required> Chef d'équipe</label>
+        </div>
+        <button type="submit" class="submit-btn">Envoyer</button>
+      </form>
+    </div>
+  </div>
+
   <style>
     body {
       margin: 0;
@@ -109,39 +149,3 @@
       margin-right: 0.5rem;
     }
   </style>
-  
-  <Entete />
-  <div class="form-container">
-    <div class="form-box">
-      <h2>Créer un nouvel utilisateur</h2>
-      <form on:submit|preventDefault={handleSubmit}>
-        <div class="input-group">
-          <label for="nom">Nom</label>
-          <input type="text" id="nom" bind:value={nom} required>
-        </div>
-        <div class="input-group">
-          <label for="prenom">Prénom</label>
-          <input type="text" id="prenom" bind:value={prenom} required>
-        </div>
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" bind:value={email} required>
-        </div>
-        <div class="input-group">
-          <label for="telephone">Téléphone</label>
-          <input type="tel" id="telephone" bind:value={telephone} required>
-        </div>
-        <div class="input-group">
-          <label for="password">Mot de passe</label>
-          <input type="password" id="password" bind:value={password} required>
-        </div>
-        <div class="role-group">
-          <label>Rôle</label>
-          <label><input type="radio" name="role" value="Employé" bind:group={role} required> Employé</label>
-          <label><input type="radio" name="role" value="Administrateur" bind:group={role} required> Administrateur</label>
-          <label><input type="radio" name="role" value="Chef d'équipe" bind:group={role} required> Chef d'équipe</label>
-        </div>
-        <button type="submit" class="submit-btn">Envoyer</button>
-      </form>
-    </div>
-  </div>
