@@ -10,12 +10,14 @@ import { Items } from "../models/items.model";
  * @param {Number} p_quantite
  * @param {file} p_image
  */
-export async function newItem(p_nom, p_description, p_quantite, p_image){
+export async function newItem(p_nom, p_description, p_categorie, p_quantite, p_image, p_statut_item){
     Items.create({
         nom: p_nom,
         description: p_description,
+        categorie: p_categorie,
         quantite: p_quantite,
-        image: p_image
+        image: p_image,
+        statut_item: p_statut_item
     })
     .then(resultat => {
         return resultat.dataValues;
