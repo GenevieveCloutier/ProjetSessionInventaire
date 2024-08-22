@@ -7,8 +7,10 @@ import { Items } from "../models/items.model";
  * @export
  * @param {String} p_nom
  * @param {String} p_description
+ * @param {String} p_categorie
  * @param {Number} p_quantite
  * @param {file} p_image
+ * @param {String} p_statut_item
  */
 export async function newItem(p_nom, p_description, p_categorie, p_quantite, p_image, p_statut_item){
     Items.create({

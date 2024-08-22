@@ -1,17 +1,13 @@
 <script>
     import '/src/app.css';
-    import BoutonBrun from "../../../components/boutonBrun.svelte";
+    import BoutonSoumettre from '../../../components/boutonSoumettre.svelte';
     import Entete from "../../../components/entete.svelte";
 
     export let data;
 
     const items = data.item;
 
-    //function à faire
-    function ajouter(){ 
-        console.log("L'item a été ajouté!");
-    }
-
+   
 </script>
 
 <Entete/>
@@ -44,7 +40,7 @@
     </select>
 
     <label for="image">Insérer une image</label>
-    <input type="file" name="image" id="image">
+    <input type="file" name="image" id="image"> <!--vérifier car ça ne fonctionne pas-->
 
-    <BoutonBrun lien={"/items"} fonction={ajouter} texte={"Soumettre"} /> <!--reste la function et le lien à faire-->
+    <BoutonSoumettre texte={"Ajouter"} /> 
 </form>
