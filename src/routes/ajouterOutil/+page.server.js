@@ -10,7 +10,8 @@ export const actions = {
             const description = formData.get('description');
             const categorie = formData.get('categorie');
             const quantite = formData.get('quantite');
-            //const image = formData.get('image'); 
+            const image = formData.get('image'); 
+            //const buffer = Buffer.from(await image.arrayBuffer());
 
             console.log("Form Data Received:", { nom, description, categorie, quantite });
 
@@ -18,8 +19,8 @@ export const actions = {
                 console.error("Missing required fields");
                 return { success: false, error: "Missing required fields" };
             }
-
-            const result = await newItem(nom, description, categorie, quantite, 'Disponible');
+            //const blob = new Blob([image], { type: image.type });
+            const result = await newItem(nom, description, categorie, quantite, null,'Disponible');
 
             console.log("New item added successfully:", result);
             return { success: true };
