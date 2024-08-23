@@ -12,21 +12,20 @@ import { Items } from "../models/items.model";
  * @param {file} p_image
  * @param {String} p_statut_item
  */
-export async function newItem(p_nom, p_description, p_categorie, p_quantite, p_image, p_statut_item){
-    Items.create({
-        nom: p_nom,
-        description: p_description,
-        categorie: p_categorie,
-        quantite: p_quantite,
-        image: p_image,
-        statut_item: p_statut_item
-    })
-    .then(resultat => {
+export async function newItem(p_nom, p_description, p_categorie, p_quantite, p_image, p_statut_item) {
+    try {
+        const resultat = await Items.create({
+            nom: p_nom,
+            description: p_description,
+            categorie: p_categorie,
+            quantite: p_quantite,
+            image: p_image,
+            statut_item: p_statut_item
+        });
         return resultat.dataValues;
-    })
-    .catch((error)=>{
+    } catch (error) {
         throw error;
-    });
+    }
 }
 
 /**
