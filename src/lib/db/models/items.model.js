@@ -20,11 +20,12 @@ export const Items = sequelize.define("items", {
     },
     image: {
         type: DataTypes.BLOB,
-        allowNull: false
+        allowNull: true
     },
     statut_item: {
         type: DataTypes.ENUM('Disponible', 'Emprunté', 'Supprimé'),
-        allowNull: false
+        allowNull: false,
+        defaultValue: 'Disponible'
     },
 });
 
