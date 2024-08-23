@@ -4,11 +4,9 @@
     import Entete from '../../components/entete.svelte';
     import BoutonBrun from '../../components/boutonBrun.svelte';
 	import Recherche from '../../components/recherche.svelte';
-    let fonction = undefined;
 
     export let data;
     const items = data.items;
-    const recherche = data.itemRecherche; // donne tous les items "Pelle"
 
     //console.log(items)
 
@@ -22,14 +20,6 @@
 <Entete/>
 <Recherche />
 
-<h1>Recherche</h1>
-{#each recherche as recherche}
-    {recherche.nom}
-{/each}
-
-<hr>
-
-<h1>Tous les items</h1>
 <div class="grid-container">
     {#each items as item}
         <div class="grid-item">

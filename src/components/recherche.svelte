@@ -9,9 +9,9 @@ export const actions = {
 
 </script>
 <div class=centrer>
-    <form method="POST" action="?/recherche">
+    <form method="GET" action="?/recherche">
         <img class="icone" src="src/images/lignes.png" alt="icone menu">
-        <input type="text" name="recherche" placeholder="rechercher dans le catalogue">
+        <input type="text" name="resultatRecherche" placeholder="rechercher dans le catalogue">
         <button type="submit"><img class="icone" src="src/images/loupe.png" alt="icone loupe"></button>
     </form>
 </div>

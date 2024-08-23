@@ -75,7 +75,7 @@ export async function rechercher(p_where){
     return await Items.findAll({
         where: {
             nom : {
-                [Op.like]: p_where
+                [Op.substring]: p_where
             },
         },
     }).then(resultat => {

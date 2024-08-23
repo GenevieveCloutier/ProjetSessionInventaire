@@ -1,27 +1,11 @@
 <script>
     import { page } from "$app/stores";
     import { goto} from "$app/navigation"; //importer goto
-    //import { findOne } from "$lib/db/controllers/users.controller";
 
     $:routeId = $page.route.id;
 
-    /*export let data;
-    const user = data.user;
-  
-    export async function load({ params }){
-    const idUser = params.id;
-    const user = await findOne({ id: idUser });
-    const locations = await locationUser(idUser);
-
-// pour afficher une page erreur au lieu de planter le serveur si il n'y pas de données
-    if (!idUser) {
-		error(404, {
-			message: 'Page non trouvée'
-		})
-    } 
-
-    return { user:user, locations:locations };
-};*/
+// passer en parametre le id après le login pour que le bouton Mon compte aille au compte de l'utilisateur
+// avec la deconnection, effacer les cookies pour effacer le id
 
       function deconnecter(){
           goto('/login');
