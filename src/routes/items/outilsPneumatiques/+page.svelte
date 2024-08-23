@@ -17,7 +17,7 @@
 
 <div class="grid-container">
     {#each items as item}
-        {#if (item.categorie=="Outil électrique") }
+        {#if (item.categorie=="Outil pneumatique") }
             
         <div class="grid-item">
             <ul>
