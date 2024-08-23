@@ -13,21 +13,20 @@ import { Op } from 'sequelize';
  * @param {file} p_image
  * @param {String} p_statut_item
  */
-export async function newItem(p_nom, p_description, p_categorie, p_quantite, p_image, p_statut_item){
-    Items.create({
-        nom: p_nom,
-        description: p_description,
-        categorie: p_categorie,
-        quantite: p_quantite,
-        image: p_image,
-        statut_item: p_statut_item
-    })
-    .then(resultat => {
+export async function newItem(p_nom, p_description, p_categorie, p_quantite, p_image, p_statut_item) {
+    try {
+        const resultat = await Items.create({
+            nom: p_nom,
+            description: p_description,
+            categorie: p_categorie,
+            quantite: p_quantite,
+            image: p_image,
+            statut_item: p_statut_item
+        });
         return resultat.dataValues;
-    })
-    .catch((error)=>{
+    } catch (error) {
         throw error;
-    });
+    }
 }
 
 /**
@@ -61,7 +60,6 @@ export async function findOne(p_where){
     }).catch((error) => {
         throw error;
     });
-};
 
 /**
  * Va chercher les items correspondant à la recherche
@@ -85,3 +83,19 @@ export async function rechercher(p_where){
         throw error;
     });
 }
+
+// /**
+//  * Va chercher tous les items électriques
+//  *
+//  * @export
+//  * @async
+//  * @returns {Object}
+//  */
+// export async function findAll(){
+//     return await Items.findAll().then(resultat => {
+//         return resultat.map(item => item.dataValues);
+//     })
+//     .catch((error)=>{
+//         throw error;
+//     });
+// }
