@@ -24,7 +24,7 @@
     {#each items as item}
         <div class="grid-item">
             <ul>
-                <img class="imgProduit" src={item.image} alt={item.nom}>
+                <img class="imgProduit" src="/src/images/{item.image}" width="250" height="300" alt={item.nom}>
                 <h2>{item.nom}</h2>
                 <p>qty disponible: {item.quantite}</p>
                  <!--Je n'ai pas encore trouvé comment afficher la bonne qty
