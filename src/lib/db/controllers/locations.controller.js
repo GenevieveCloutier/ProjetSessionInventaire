@@ -94,5 +94,7 @@ export async function locationUser(p_where){
 };
 
 
+export async function qtyRestante() {
+   get.QtybyItemId
 
-
+}

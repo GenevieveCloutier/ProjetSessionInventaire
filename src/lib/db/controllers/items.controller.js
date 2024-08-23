@@ -85,3 +85,19 @@ export async function rechercher(p_where){
         throw error;
     });
 }
+
+// /**
+//  * Va chercher tous les items électriques
+//  *
+//  * @export
+//  * @async
+//  * @returns {Object}
+//  */
+// export async function findAll(){
+//     return await Items.findAll().then(resultat => {
+//         return resultat.map(item => item.dataValues);
+//     })
+//     .catch((error)=>{
+//         throw error;
+//     });
+// }

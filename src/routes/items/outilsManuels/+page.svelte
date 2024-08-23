@@ -1,9 +1,8 @@
-
 <script>
     import '/src/app.css';
-    import Entete from '../../components/entete.svelte';
-    import BoutonBrun from '../../components/boutonBrun.svelte';
-	import Recherche from '../../components/recherche.svelte';
+    import Entete from '../../../components/entete.svelte';
+    import BoutonBrun from '../../../components/boutonBrun.svelte';
+	import Recherche from '../../../components/recherche.svelte';
 
     export let data;
     const items = data.items;
@@ -18,6 +17,8 @@
 
 <div class="grid-container">
     {#each items as item}
+        {#if (item.categorie=="Outil manuel") }
+            
         <div class="grid-item">
             <ul>
                 <img src="/src/images/{item.image}" width="200" height="230" alt={item.nom}>
@@ -30,8 +31,6 @@
                 <BoutonBrun lien={`items/${item.id}`}  texte={"Louer"} />
             </ul>
         </div>
+        {/if}
     {/each}
 </div>
-
-
-

@@ -35,10 +35,10 @@
           <div class="dropdown">
             <a href = "/items" class:active = {routeId == '/items'} class="catalogue" >Catalogue</a>
             <div class="dropdown-content">
-                <a href="/items/outilsElectriques" class= {routeId == '/items/outilsElectriques'}>OUTILS ÉLECTRIQUES</a>
-                <a href="/items/outilsPneumatiques" class= {routeId == '/items/outilsPneumatiques'}>OUTILS PNEUMATIQUES</a>
-                <a href="/items/outilsManuels" class= {routeId == '/items/outilsManuels'}>OUTILS MANUELS</a>
-                <a href="/items/divers" class= {routeId == '/items/divers'}>DIVERS</a>
+                <a href="/items/outilsElectriques" class:active= {routeId == '/items/outilsElectriques'}>OUTILS ÉLECTRIQUES</a>
+                <a href="/items/outilsPneumatiques" class:active= {routeId == '/items/outilsPneumatiques'}>OUTILS PNEUMATIQUES</a>
+                <a href="/items/outilsManuels" class:active= {routeId == '/items/outilsManuels'}>OUTILS MANUELS</a>
+                <a href="/items/divers" class:active= {routeId == '/items/divers'}>DIVERS</a>
             </div>
 
             </div>
