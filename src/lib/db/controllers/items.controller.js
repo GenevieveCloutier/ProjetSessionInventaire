@@ -60,6 +60,7 @@ export async function findOne(p_where){
     }).catch((error) => {
         throw error;
     });
+}
 
 /**
  * Va chercher les items correspondant à la recherche
@@ -69,6 +70,7 @@ export async function findOne(p_where){
  * @returns {Object}
  * @param {Object} p_where
  */
+
 export async function rechercher(p_where){
     return await Items.findAll({
         where: {
