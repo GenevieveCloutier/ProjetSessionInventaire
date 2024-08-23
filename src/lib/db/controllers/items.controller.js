@@ -61,3 +61,25 @@ export async function findOne(p_where){
         throw error;
     });
 
+/**
+ * Va chercher les items correspondant à la recherche
+ *
+ * @export
+ * @async
+ * @returns {Object}
+ * @param {Object} p_where
+ */
+export async function rechercher(p_where){
+    return await Items.findAll({
+        where: {
+            nom : {
+                [Op.substring]: p_where
+            },
+        },
+    }).then(resultat => {
+        return resultat.map(item => item.dataValues);
+    })
+    .catch((error)=>{
+        throw error;
+    });
+}
