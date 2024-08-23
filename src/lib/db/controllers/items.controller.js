@@ -1,4 +1,5 @@
 import { Items } from "../models/items.model";
+import { Op } from 'sequelize';
 
 
 /**
@@ -59,4 +60,4 @@ export async function findOne(p_where){
     }).catch((error) => {
         throw error;
     });
-}
+

@@ -4,13 +4,22 @@
     import Entete from '../../components/entete.svelte';
 
     const users = data.users;
-    console.log(users)
+
+    //let pasDeDonnees = document.querySelector('#pasDeDonnees');
+    //.hidden = true;
+    //let pasDeDonnees = true;
+    if(users.length === 0){
+        console.log("rien à afficher")
+        //{pasDeDonnees}
+        //pasDeDonnees.hidden = false;
+    }
 
 </script>
 
 <Entete/>
 <div class="boite-1">
-    <h1>Utilisateursss</h1>
+    <h1>Utilisateurs</h1>
+    <p>Aucun utilisateur à afficher</p>
 {#each users as user}
 
     <h2>Utilisateur : {user.id}</h2>

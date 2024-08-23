@@ -104,6 +104,10 @@ export async function findAll(){
             { model: Roles, as: "role" }
         ]
     }).then(resultat => {
+        if(resultat.length === 0){
+            console.log("Pas de résultat à afficher")
+            //je voudrais afficher une page qui dit pas de résultat quand pas de données
+        }
         return resultat.map(user => ({
             ...user.dataValues,
             role: user.role ? user.role.dataValues : null

@@ -1,7 +1,7 @@
 <script>
     export let texte;
     export let lien;
-    export let fonction;
+    export let fonction = () => {};
 </script>
 
 <a href={lien}><button on:click={fonction}> {texte} </button></a>

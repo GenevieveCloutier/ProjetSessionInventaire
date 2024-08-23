@@ -3,7 +3,10 @@
     import { goto} from "$app/navigation"; //importer goto
 
     $:routeId = $page.route.id;
-  
+
+// passer en parametre le id après le login pour que le bouton Mon compte aille au compte de l'utilisateur
+// avec la deconnection, effacer les cookies pour effacer le id
+
       function deconnecter(){
           goto('/login');
       };
