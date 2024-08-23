@@ -106,7 +106,6 @@ export async function findAll(){
     }).then(resultat => {
         if(resultat.length === 0){
             console.log("Pas de résultat à afficher")
-            //je voudrais afficher une page qui dit pas de résultat quand pas de données
         }
         return resultat.map(user => ({
             ...user.dataValues,
