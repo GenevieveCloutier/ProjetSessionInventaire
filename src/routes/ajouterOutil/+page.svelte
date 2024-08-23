@@ -80,7 +80,7 @@
         <div class="form-right">
             <div class="photo-upload">
                 <label for="photo-upload">Téléverser une photo</label>
-                <input type="file" id="photo-upload" accept="image/*" on:change={handleFileChange} required />
+                <input type="file" id="photo-upload" accept="image/*" on:change={handleFileChange} />
             </div>
         </div>
 
