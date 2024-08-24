@@ -86,6 +86,34 @@ export async function rechercher(p_where){
     });
 }
 
+export async function findAllItemsWithoutImage() {
+    try {
+        // Exclude the image field
+        const items = await Items.findAll({
+            attributes: ['id','nom', 'description', 'categorie', 'quantite', 'statut_item']
+        });
+        return items.map(item => item.dataValues);
+    } catch (error) {
+        throw error;
+    }
+}
+
+export async function removeItem(itemId) {
+    try {
+        console.log("Item id is = " + itemId);
+        const item = await Items.findByPk(itemId);
+        if (item) {
+
+            await item.destroy();
+            return { success: true };
+        } else {
+            throw new Error('Item not found');
+        }
+    } catch (error) {
+        throw error;
+    }
+}
+
 // /**
 //  * Va chercher tous les items électriques
 //  *
