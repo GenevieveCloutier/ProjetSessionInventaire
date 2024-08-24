@@ -19,15 +19,19 @@ export const actions = {
                 console.error("Missing required fields");
                 return { success: false, error: "Missing required fields" };
             }
-            //const blob = new Blob([image], { type: image.type });
-            const result = await newItem(nom, description, categorie, quantite, null,'Disponible');
+            const blob = new Blob([image], { type: image.type });
+            const result = await newItem(nom, description, categorie, quantite, blob,'Disponible');
 
             console.log("New item added successfully:", result);
+
+
             return { success: true };
 
         } catch (error) {
             console.error("Error while creating a new item:", error);
             return { success: false, error: error.message };
         }
+
+        
     }
 };
