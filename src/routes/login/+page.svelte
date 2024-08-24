@@ -1,6 +1,6 @@
 
 <script>
-  import Entete from '../../components/entete.svelte';
+  import EnteteVide from '../../components/enteteVide.svelte';
 
     let username = '';
     let password = '';
@@ -87,7 +87,7 @@
     }
   </style>
   
-  <Entete/>
+  <EnteteVide/>
   <div class="login-container">
     <div class="login-box">
       <h2>Connexion</h2>
@@ -105,3 +105,4 @@
       <a href="/mot-de-passe-oublie" class="forgot-password">Mot de passe oublié</a>
     </div>
   </div>
+  
