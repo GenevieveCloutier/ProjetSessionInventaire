@@ -30,13 +30,10 @@
             });
 
             const result = await response.json();
+            alert("Votre outil a été créé!");
+            window.location.reload(); 
 
-            if (response.ok && result.success) {
-                console.log("Item added successfully");
-                goto('/items'); 
-            } else {
-                console.error("Failed to add item:", result.error);
-            }
+      
         } catch (error) {
             console.error("Error submitting form:", error);
         }
