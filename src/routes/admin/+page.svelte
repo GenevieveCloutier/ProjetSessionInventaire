@@ -16,7 +16,7 @@
 <div class="button-container">
     <div class="row">
         <button on:click={() => handleRedirect('/ajouterOutil')}>Ajouter un outil</button>
-        <button on:click={() => handleRedirect('/')}>Modifier ou supprimer un outil</button>
+        <button on:click={() => handleRedirect('/modifierSupprimerOutil')}>Modifier ou supprimer un outil</button>
     </div>
     <div class="row">
         <button on:click={() => handleRedirect('/')}>Remettre un outil en stock</button>
