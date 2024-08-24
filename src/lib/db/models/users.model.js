@@ -37,20 +37,16 @@ export const Users = sequelize.define("users", {
         allowNull: false
     },
 });
-
+//encrypter le MDP à la première utilisation
 Users.addHook('beforeCreate',(async (user, option) => {
     user.password = await bcrypt.hash(user.password, 10);
 }));
 
-// user.password = undefined, donc il ne le crypte pas... :(
-Users.addHook('beforeBulkUpdate',(async(user, option)=> {
-    if (user.password) {
-        console.log(user.password + "mot de passe bycrypt" )
-        const salt = await bcrypt.genSaltSync(10, 'a');
-        user.password = bcrypt.hashSync(user.password, salt);
-        }
-    }
-));
+//encrypter le MPD après modification
+Users.addHook('beforeUpdate',(async(user, option)=> {
+    user.password = bcrypt.hashSync(user.password,10);
+}));
+
 
 Users.belongsTo(Roles, { foreignKey: 'role_id', as: 'role' });
 Roles.hasMany(Users, { foreignKey: 'role_id', as: 'users' });

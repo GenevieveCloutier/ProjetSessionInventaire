@@ -3,65 +3,91 @@
     import Entete from '../../components/entete.svelte';
     import { goto } from '$app/navigation';
 
-    function handleRedirect(route) {
-        goto(route);
+    let nom = '';
+    let description = '';
+    let categorie = '';
+    let quantite = 0;
+    let image = null;
+
+    function handleFileChange(event) {
+        image = event.target.files[0];
     }
 
-    function handleSubmit() {
-        console.log("Form submitted!");
+    async function handleSubmit(event) {
+        event.preventDefault();
+
+        const formData = new FormData();
+        formData.append('nom', nom);
+        formData.append('description', description);
+        formData.append('categorie', categorie);
+        formData.append('quantite', quantite);
+        formData.append('image', image);
+
+        try {
+            const response = await fetch('/ajouterOutil', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const result = await response.json();
+            alert("Votre outil a été créé!");
+            window.location.reload(); 
+
+      
+        } catch (error) {
+            console.error("Error submitting form:", error);
+        }
     }
 </script>
 
 <Entete />
 
-
 <div class="form-container">
 
     <h2 class="form-title">Ajouter un outil</h2>
 
-
     <div class="form-grid">
 
         <div class="form-left">
-            <form>
+            <form method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="nom">Nom</label>
-                    <input type="text" id="nom" placeholder="Entrez le nom" />
+                    <input type="text" id="nom" name="nom" bind:value={nom} placeholder="Entrez le nom" required />
                 </div>
-
+            
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea id="description" placeholder="Entrez la description"></textarea>
+                    <textarea id="description" name="description" bind:value={description} placeholder="Entrez la description" required></textarea>
                 </div>
-
+            
                 <div class="form-group">
                     <label for="categorie">Categorie</label>
-                    <input type="text" id="categorie" placeholder="Entrez la catégorie" />
+                    <input type="text" id="categorie" name="categorie" bind:value={categorie} placeholder="Entrez la catégorie" required />
                 </div>
-
+            
                 <div class="form-group">
                     <label for="quantite">Quantité</label>
-                    <input type="number" id="quantite" placeholder="Entrez la quantité" />
+                    <input type="number" id="quantite" name="quantite" bind:value={quantite} placeholder="Entrez la quantité" required />
                 </div>
+            
             </form>
+            
         </div>
-
 
         <div class="form-right">
             <div class="photo-upload">
                 <label for="photo-upload">Téléverser une photo</label>
-                <input type="file" id="photo-upload" accept="image/*" />
+                <input type="file" id="photo-upload" accept="image/*" on:change={handleFileChange} />
             </div>
         </div>
 
         <div class="button-column">
-            <button class="ajouter-button" on:click={handleSubmit}>Ajouter</button>
+            <button class="ajouter-button" type="submit" on:click={handleSubmit}>Ajouter</button>
         </div>
     </div>
 </div>
 
 <style>
-
     body {
         margin: 0;
         padding: 0;
@@ -150,6 +176,7 @@
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
+        grid-column: 3;
     }
 
     .ajouter-button {

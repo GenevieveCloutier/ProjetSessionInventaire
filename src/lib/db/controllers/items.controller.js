@@ -1,4 +1,5 @@
 import { Items } from "../models/items.model";
+import { Op } from 'sequelize';
 
 
 /**
@@ -7,22 +8,25 @@ import { Items } from "../models/items.model";
  * @export
  * @param {String} p_nom
  * @param {String} p_description
+ * @param {String} p_categorie
  * @param {Number} p_quantite
  * @param {file} p_image
+ * @param {String} p_statut_item
  */
-export async function newItem(p_nom, p_description, p_quantite, p_image){
-    Items.create({
-        nom: p_nom,
-        description: p_description,
-        quantite: p_quantite,
-        image: p_image
-    })
-    .then(resultat => {
+export async function newItem(p_nom, p_description, p_categorie, p_quantite, p_image, p_statut_item) {
+    try {
+        const resultat = await Items.create({
+            nom: p_nom,
+            description: p_description,
+            categorie: p_categorie,
+            quantite: p_quantite,
+            image: p_image,
+            statut_item: p_statut_item
+        });
         return resultat.dataValues;
-    })
-    .catch((error)=>{
+    } catch (error) {
         throw error;
-    });
+    }
 }
 
 /**
@@ -57,3 +61,71 @@ export async function findOne(p_where){
         throw error;
     });
 }
+
+/**
+ * Va chercher les items correspondant à la recherche
+ *
+ * @export
+ * @async
+ * @returns {Object}
+ * @param {Object} p_where
+ */
+
+export async function rechercher(p_where){
+    return await Items.findAll({
+        where: {
+            nom : {
+                [Op.substring]: p_where
+            },
+        },
+    }).then(resultat => {
+        return resultat.map(item => item.dataValues);
+    })
+    .catch((error)=>{
+        throw error;
+    });
+}
+
+export async function findAllItemsWithoutImage() {
+    try {
+        // Exclude the image field
+        const items = await Items.findAll({
+            attributes: ['id','nom', 'description', 'categorie', 'quantite', 'statut_item']
+        });
+        return items.map(item => item.dataValues);
+    } catch (error) {
+        throw error;
+    }
+}
+
+export async function removeItem(itemId) {
+    try {
+        console.log("Item id is = " + itemId);
+        const item = await Items.findByPk(itemId);
+        if (item) {
+
+            await item.destroy();
+            return { success: true };
+        } else {
+            throw new Error('Item not found');
+        }
+    } catch (error) {
+        throw error;
+    }
+}
+
+// /**
+//  * Va chercher tous les items électriques
+//  *
+//  * @export
+//  * @async
+//  * @returns {Object}
+//  */
+// export async function findAll(){
+//     return await Items.findAll().then(resultat => {
+//         return resultat.map(item => item.dataValues);
+//     })
+//     .catch((error)=>{
+//         throw error;
+//     });
+// }

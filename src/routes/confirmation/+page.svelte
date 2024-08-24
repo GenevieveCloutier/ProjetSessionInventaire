@@ -12,7 +12,7 @@
 
 <h3>Merci!</h3><!-- passer le nom utilisateur ici quand le login sera fait-->
 <p>Ta demande a bien été envoyée!</p>
-<BoutonBrun lien={"/catalogue"} texte={"Retour au catalogue"}/>
+<BoutonBrun lien={"/items"} texte={"Retour au catalogue"}/>
 
     </div>
 </div>

@@ -3,33 +3,50 @@
     import '/src/app.css';
     import Entete from '../../components/entete.svelte';
     import BoutonBrun from '../../components/boutonBrun.svelte';
-    let fonction = undefined;
+	import Recherche from '../../components/recherche.svelte';
+
     export let data;
-
     const items = data.items;
+    const recherche = data.itemRecherche;
+    console.log(recherche)
 
-    console.log(items)
-
-    function louer(){
-        console.log("fonctionne")
-    }
+    //console.log(items)
 
 </script>
 
 <Entete/>
+<Recherche />
 
-<div class="grid-container">
+{#each recherche as r}
+<h1>Résultats de recherche</h1>
+<div class="grid-container" id="outilRecherche">
+    <div class="grid-item">
+    <ul>
+        <img src="src/images/{r.image}" width="200" height="230" alt={r.nom}>
+        <h2>{r.nom}</h2>
+        <p>qty disponible: {r.quantite}</p>
+        <p>date de disponibilité: {r.description}</p>
+        <h3>#{r.id}</h3>
+        <BoutonBrun lien={`items/${r.id}`}  texte={"Louer"} />
+    </ul>
+    </div>
+</div>
+{/each}
+
+
+<h1 id="titreTous">Tous les outils</h1>
+<div class= "grid-container" id="tousOutils">
     {#each items as item}
         <div class="grid-item">
             <ul>
-                <img src="/src/images/{item.image}" width="250" height="300" alt={item.nom}>
+                <img src="src/images/{item.image}" width="200" height="230" alt={item.nom}>
                 <h2>{item.nom}</h2>
                 <p>qty disponible: {item.quantite}</p>
                  <!--Je n'ai pas encore trouvé comment afficher la bonne qty
                 <p>qty disponible: {items.filter(item => item.statut_item === "disponible").length}</p> -->
                 <p>date de disponibilité: {item.description}</p>
                 <h3>#{item.id}</h3>
-                <BoutonBrun lien={"./locations/new/{item.id}"}  texte={"Louer"} /> <!--mon lien n'est pas correct, je regarde ça plus tard-->
+                <BoutonBrun lien={`items/${item.id}`}  texte={"Louer"} />
             </ul>
         </div>
     {/each}
