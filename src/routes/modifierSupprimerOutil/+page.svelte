@@ -2,51 +2,45 @@
     import '/src/app.css';
     import Entete from '../../components/entete.svelte';
     import { goto } from '$app/navigation';
-    import { invalidateAll } from '$app/navigation';
 
     export let data;
     let items = data.items;
 
     $: items = data.items;
-    console.log("Item id is " + items.itemId);
+
+    function handleRedirect(route) {
+        goto(route);
+    }
     async function handleModify(itemId) {
-        goto(`/modify/${itemId}`);
+        handleRedirect(`/formulaireModifier/${itemId}`);
     }
 
     async function removeItem(itemId) {
-       
         const userConfirmed = window.confirm("Voulez-vous vraiment supprimer cet outil?");
-        
         if (userConfirmed) {
             try {
-
                 const formData = new FormData();
                 formData.append('id', itemId);
                 formData.append('action', 'remove');
-
 
                 const response = await fetch('/modifierSupprimerOutil', {
                     method: 'POST',
                     body: formData
                 });
-                alert("L'outil a été supprimé avec succès!")
-                window.location.reload(); 
+
                 if (response.ok) {
+                    alert("L'outil a été supprimé avec succès !");
 
-                    const result = await response.json();
-                    if (result.success) {
-
-                    } else {
-                        console.error("Failed to remove item:", result.error);
-                    }
+                    items = items.filter(item => item.id !== itemId);
                 } else {
-                    console.error("Failed to remove item.");
+                    console.error("Failed to update item.");
                 }
             } catch (error) {
-                console.error("Error removing item:", error);
+                console.error("Error updating item:", error);
             }
         }
     }
+
 </script>
 
 <Entete />
@@ -58,6 +52,7 @@
         <table>
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Nom</th>
                     <th>Description</th>
                     <th>Categorie</th>
@@ -68,7 +63,9 @@
             </thead>
             <tbody>
                 {#each items as item}
+                    {#if item.statut_item === 'disponible' || item.statut_item === 'Disponible'}
                     <tr>
+                        <td>{item.id}</td>
                         <td>{item.nom}</td>
                         <td>{item.description}</td>
                         <td>{item.categorie}</td>
@@ -79,16 +76,20 @@
                             <button class="button delete" on:click={() => removeItem(item.id)}>Supprimer</button>
                         </td>
                     </tr>
+                    {/if}
                 {/each}
             </tbody>
         </table>
     {:else}
-        <p>No items found in the database.</p>
+        <h2>Il n'y a aucun outil dans votre base de données.</h2>
     {/if}
 </div>
 
 <style>
     h1 {
+        color: white;
+    }
+    h2 {
         color: white;
     }
     .container {
