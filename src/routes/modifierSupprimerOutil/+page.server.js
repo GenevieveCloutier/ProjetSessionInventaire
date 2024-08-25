@@ -2,7 +2,6 @@ import { findAllItemsWithoutImage, removeItem } from '$lib/db/controllers/items.
 
 export async function load() {
     try {
-        // Fetch all items from the database excluding the image field
         const items = await findAllItemsWithoutImage();
         return { items };
     } catch (error) {
@@ -21,7 +20,7 @@ export const actions = {
 
             if (action === 'remove' && id) {
                 const result = await removeItem(id);
-                return result; // Return success or failure
+                return result; 
             } else {
                 return { success: false, error: 'Invalid request' };
             }
