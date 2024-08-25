@@ -1,4 +1,6 @@
-import { findAllItemsWithoutImage, removeItem } from '$lib/db/controllers/items.controller';
+
+
+import { findAllItemsWithoutImage, markItemAsAvailable } from '$lib/db/controllers/items.controller';
 
 export async function load() {
     try {
@@ -15,17 +17,14 @@ export const actions = {
         try {
             const formData = await request.formData();
             const id = formData.get('id');
-            const action = formData.get('action');
-            console.log("Item id is = " + id);
 
-            if (action === 'remove' && id) {
-                const result = await removeItem(id);
-                return result; 
+            if (id) {
+                return await markItemAsAvailable(id);
             } else {
                 return { success: false, error: 'Invalid request' };
             }
         } catch (error) {
-            console.error('Error removing item:', error);
+            console.error('Error updating item status:', error);
             return { success: false, error: error.message };
         }
     }

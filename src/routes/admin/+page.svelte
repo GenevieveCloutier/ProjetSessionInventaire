@@ -19,8 +19,8 @@
         <button on:click={() => handleRedirect('/modifierSupprimerOutil')}>Modifier ou supprimer un outil</button>
     </div>
     <div class="row">
-        <button on:click={() => handleRedirect('/')}>Remettre un outil en stock</button>
-        <button on:click={() => handleRedirect('/')}>Outils en cours de location</button>
+        <button on:click={() => handleRedirect('/remettreEnStock')}>Remettre un outil en stock</button>
+        <button on:click={() => handleRedirect('/outilsEnLocation')}>Outils en cours de location</button>
     </div>
 </div>
 

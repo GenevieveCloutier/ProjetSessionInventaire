@@ -21,7 +21,7 @@ export async function newItem(p_nom, p_description, p_categorie, p_quantite, p_i
             categorie: p_categorie,
             quantite: p_quantite,
             image: p_image,
-            statut_item: p_statut_item
+            statut_item: p_statut_item,
         });
         return resultat.dataValues;
     } catch (error) {
@@ -53,13 +53,21 @@ export async function findAll(){
  * @param {Object} p_where
  * @returns {Object}
  */
-export async function findOne(p_where){
-    return await Items.findOne({ where: p_where })
-    .then(res => {
-        return res.dataValues;
-    }).catch((error) => {
+export async function findOne(p_where) {
+    try {
+        const item = await Items.findOne({
+            where: p_where,
+            attributes: { exclude: ['image'] } 
+        });
+
+        if (!item) {
+            throw new Error('Item not found');
+        }
+
+        return item.dataValues;
+    } catch (error) {
         throw error;
-    });
+    }
 }
 
 /**
@@ -88,7 +96,7 @@ export async function rechercher(p_where){
 
 export async function findAllItemsWithoutImage() {
     try {
-        // Exclude the image field
+
         const items = await Items.findAll({
             attributes: ['id','nom', 'description', 'categorie', 'quantite', 'statut_item']
         });
@@ -103,8 +111,51 @@ export async function removeItem(itemId) {
         console.log("Item id is = " + itemId);
         const item = await Items.findByPk(itemId);
         if (item) {
+            item.statut_item = 'Supprimé';
+            await item.save(); 
+            return { success: true };
+        } else {
+            throw new Error('Item not found');
+        }
+    } catch (error) {
+        throw error;
+    }
+}
 
-            await item.destroy();
+
+export async function updateItem(updatedItem) {
+    try {
+        const { id, nom, description, categorie, quantite, statut_item } = updatedItem;
+
+        const [updated] = await Items.update(
+            { nom, description, categorie, quantite, statut_item, updatedAt: new Date() },
+            { where: { id } }
+        );
+
+        if (updated) {
+            return { success: true };
+        } else {
+            return { success: false, error: 'Item not found or no changes made' };
+        }
+    } catch (error) {
+        console.error('Error updating item:', error);
+        return { success: false, error: error.message };
+    }
+}
+
+/**
+ * Updates the statut_item of an item to 'Disponible'
+ *
+ * @export
+ * @param {Number} itemId
+ * @returns {Object}
+ */
+export async function markItemAsAvailable(itemId) {
+    try {
+        const item = await Items.findByPk(itemId);
+        if (item) {
+            item.statut_item = 'Disponible';
+            await item.save();
             return { success: true };
         } else {
             throw new Error('Item not found');

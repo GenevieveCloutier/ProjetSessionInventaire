@@ -8,11 +8,8 @@
 
     $: items = data.items;
 
-    function handleRedirect(route) {
-        goto(route);
-    }
     async function handleModify(itemId) {
-        handleRedirect(`/formulaireModifier/${itemId}`);
+        goto(`/formulaireModifier/${itemId}`);
     }
 
     async function removeItem(itemId) {
@@ -29,24 +26,44 @@
                 });
 
                 if (response.ok) {
-                    alert("L'outil a été supprimé avec succès !");
-
-                    items = items.filter(item => item.id !== itemId);
+                    alert("L'outil a été supprimé avec succès!");
+                    window.location.reload();
                 } else {
-                    console.error("Failed to update item.");
+                    console.error("Failed to remove item.");
                 }
             } catch (error) {
-                console.error("Error updating item:", error);
+                console.error("Error removing item:", error);
             }
         }
     }
 
+    async function markAsAvailable(itemId) {
+        try {
+            const formData = new FormData();
+            formData.append('id', itemId);
+            formData.append('action', 'markAsAvailable');
+
+            const response = await fetch('/remettreEnStock', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                alert("L'outil a été remis en stock avec succès!");
+                window.location.reload();
+            } else {
+                console.error("Failed to update item status.");
+            }
+        } catch (error) {
+            console.error("Error updating item status:", error);
+        }
+    }
 </script>
 
 <Entete />
 
 <div class="container">
-    <h1>Modfier ou supprimer un outil</h1>
+    <h1>Remettre un outil en stock</h1>
 
     {#if items && items.length > 0}
         <table>
@@ -63,7 +80,6 @@
             </thead>
             <tbody>
                 {#each items as item}
-                    {#if item.statut_item === 'disponible' || item.statut_item === 'Disponible'}
                     <tr>
                         <td>{item.id}</td>
                         <td>{item.nom}</td>
@@ -71,12 +87,14 @@
                         <td>{item.categorie}</td>
                         <td>{item.quantite}</td>
                         <td>{item.statut_item}</td>
+  
                         <td>
-                            <button class="button modify" on:click={() => handleModify(item.id)}>Modifier</button>
-                            <button class="button delete" on:click={() => removeItem(item.id)}>Supprimer</button>
+                            {#if item.statut_item === 'Supprimé'}
+                            <button class="button restock" on:click={() => markAsAvailable(item.id)}>Remettre en stock</button>
+                            {/if}
                         </td>
+                        
                     </tr>
-                    {/if}
                 {/each}
             </tbody>
         </table>
@@ -86,7 +104,7 @@
 </div>
 
 <style>
-    h1 {
+     h1 {
         color: white;
     }
     h2 {
@@ -136,5 +154,8 @@
 
     .button:hover {
         opacity: 0.8;
+    }
+    .button.restock {
+        background-color: #ffc107;
     }
 </style>
