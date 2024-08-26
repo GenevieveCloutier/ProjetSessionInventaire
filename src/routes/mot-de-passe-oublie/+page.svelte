@@ -1,3 +1,5 @@
+
+
 <!--<scrip>
     import EnteteVide from '../../components/enteteVide.svelte';
     let username = '';
@@ -37,7 +39,8 @@
       }
   }
 </script>
--->
+
+
   <style>
     .mot-de-passe-oublie-container {
         display: flex;
@@ -122,6 +125,7 @@
   </div>
 
 -->
+<!--
 <script>
   import EnteteVide from '../../components/enteteVide.svelte';
   let username = '';
@@ -152,6 +156,7 @@
 </script>
 
 <!-- Ajoutez un bloc pour afficher un message d'erreur -->
+<!--
 {#if errorMessage}
   <div class="error">{errorMessage}</div>
 {/if}
@@ -176,3 +181,5 @@
       {/if}
   </div>
 </div>
+
+-->
