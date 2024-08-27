@@ -19,9 +19,4 @@ export async function load ({ params }){
     const location = await newLocation({ params });
     return { location: location }
 }
-// Je dois comprendre comment faire, je regarde ça plus tard
-/*
-export async function load({ params }) {
-    console.log(params)
-    const location = await 
-}*/
+
