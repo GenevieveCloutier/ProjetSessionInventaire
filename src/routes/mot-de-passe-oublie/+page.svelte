@@ -1,5 +1,5 @@
-<script>
-    import Entete from '../../components/entete.svelte';
+<!--<scrip>
+    import EnteteVide from '../../components/enteteVide.svelte';
     let username = '';
     let email = '';
     let message = '';
@@ -10,8 +10,34 @@
       formSubmitted = true;
       message = `Nous vous avons envoyé un courriel à ${email} avec un nouveau mot de passe.`;
     }
-  </script>
-  
+  </scrip>
+-->
+<!--<script>
+  import EnteteVide from '../../components/enteteVide.svelte';
+  import { goto } from '$app/navigation';
+
+  let username = '';
+  let password = '';
+
+  async function handleLogin() {
+      const formData = new FormData();
+      formData.append('username', username);
+      formData.append('password', password);
+
+      const response = await fetch('/login', {
+          method: 'POST',
+          body: formData
+      });
+
+      if (response.ok) {
+          // Redirection après une connexion réussie
+          await goto('/');
+      } else {
+          console.error('Erreur lors de la connexion');
+      }
+  }
+</script>
+-->
   <style>
     .mot-de-passe-oublie-container {
         display: flex;
@@ -73,8 +99,8 @@
       color: green;
     }
   </style>
-  
-  <Entete/>
+  <!--
+  <EnteteVide/>
   <div class="mot-de-passe-oublie-container">
     <div class="mot-de-passe-oublie-box">
       <h2>Mot de passe oublié</h2>
@@ -94,3 +120,59 @@
       {/if}
     </div>
   </div>
+
+-->
+<script>
+  import EnteteVide from '../../components/enteteVide.svelte';
+  let username = '';
+  let email = '';
+  let message = '';
+  let formSubmitted = false;
+  let errorMessage = '';
+
+  async function handleSubmit() {
+      const formData = new FormData();
+      formData.append('username', username);
+      formData.append('email', email);
+
+      const response = await fetch('/mot-de-passe', {
+          method: 'POST',
+          body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+          formSubmitted = true;
+          message = result.message;
+      } else {
+          errorMessage = result.error;
+      }
+  }
+</script>
+
+<!-- Ajoutez un bloc pour afficher un message d'erreur -->
+{#if errorMessage}
+  <div class="error">{errorMessage}</div>
+{/if}
+
+<EnteteVide />
+<div class="mot-de-passe-oublie-container">
+  <div class="mot-de-passe-oublie-box">
+      <h2>Mot de passe oublié</h2>
+      <form on:submit|preventDefault={handleSubmit}>
+          <div class="input-group">
+              <label for="username">Nom d'utilisateur</label>
+              <input type="text" id="username" bind:value={username} required>
+          </div>
+          <div class="input-group">
+              <label for="email">Courriel</label>
+              <input type="email" id="email" bind:value={email} required>
+          </div>
+          <button type="submit" class="submit-btn">Envoyer</button>
+      </form>
+      {#if formSubmitted}
+          <div class="message">{message}</div>
+      {/if}
+  </div>
+</div>

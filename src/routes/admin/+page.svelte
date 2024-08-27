@@ -33,7 +33,7 @@
 <div class="button-container">
     <div class="row">
         <button id="boutonAjoutOutil" on:click={() => handleRedirect('/ajouterOutil')}>Ajouter un outil</button>
-        <button id="boutonSuppOutil"on:click={() => handleRedirect('/')}>Modifier ou supprimer un outil</button>
+        <button id="boutonSuppOutil"on:click={() => handleRedirect('/modifierSupprimerOutil')}>Modifier ou supprimer un outil</button>
     </div>
     <div class="row">
         <button id="boutonStockOutil" on:click={() => handleRedirect('/')}>Remettre un outil en stock</button>

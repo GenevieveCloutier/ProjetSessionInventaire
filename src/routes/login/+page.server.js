@@ -1,4 +1,4 @@
-/** @type {import('./$types').PageServerLoad} */;
+/**/** @type {import('./$types').PageServerLoad} */;
 import { authenticate } from "$lib/db/controllers/users.controller";
 import { redirect } from '@sveltejs/kit';
 

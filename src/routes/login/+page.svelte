@@ -1,6 +1,6 @@
 
 <script >
-  import EnteteVide from '../../components/enteteVide.svelte';
+  import EnteteVideVide from '../../components/enteteVideVide.svelte';
 
   </script>
   
@@ -81,4 +81,22 @@
     }
   </style>
   
-
+  <EnteteVide/>
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Connexion</h2>
+      <form on:submit|preventDefault={handleLogin}>
+        <div class="input-group">
+          <label for="username">Utilisateur</label>
+          <input type="text" id="username" bind:value={username} required>
+        </div>
+        <div class="input-group">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" bind:value={password} required>
+        </div>
+        <button type="submit" class="login-btn">Se connecter</button>
+      </form>
+      <a href="/mot-de-passe-oublie" class="forgot-password">Mot de passe oublié</a>
+    </div>
+  </div>
+  
