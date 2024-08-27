@@ -8,35 +8,6 @@
 
     $: items = data.items;
 
-    async function handleModify(itemId) {
-        goto(`/formulaireModifier/${itemId}`);
-    }
-
-    async function removeItem(itemId) {
-        const userConfirmed = window.confirm("Voulez-vous vraiment supprimer cet outil?");
-        if (userConfirmed) {
-            try {
-                const formData = new FormData();
-                formData.append('id', itemId);
-                formData.append('action', 'remove');
-
-                const response = await fetch('/modifierSupprimerOutil', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (response.ok) {
-                    alert("L'outil a été supprimé avec succès!");
-                    window.location.reload();
-                } else {
-                    console.error("Failed to remove item.");
-                }
-            } catch (error) {
-                console.error("Error removing item:", error);
-            }
-        }
-    }
-
     async function markAsAvailable(itemId) {
         try {
             const formData = new FormData();
