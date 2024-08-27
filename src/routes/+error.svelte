@@ -11,7 +11,7 @@
 </div>
 <br><br>
 <div class="retour">
-    <a href = "/">RETOUR À LA PAGE D'ACCUEIL</a></div>
+    <a href = "/">RETOUR À LA PAGE D'ACCUEIL</a></div>  <!--mon lien ne focntionne pas pourquoi? -->
 <div class="logoNoir">
     <img src="/src/images/logoNoir.png" alt="Logo">
 </div>

@@ -1,7 +1,6 @@
 
 <script>
     import Entete from '../../../components/entete.svelte';
-      import Entete from "../../../components/entete.svelte";
   
     let nom = '';
     let prenom = '';

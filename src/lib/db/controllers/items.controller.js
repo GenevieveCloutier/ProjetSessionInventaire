@@ -56,8 +56,8 @@ export async function findAll(){
 export async function findOne(p_where) {
     try {
         const item = await Items.findOne({
-            where: p_where
-           // attributes: { exclude: ['image'] }  ///Pourquoi cet attribut?
+            where: p_where,
+            attributes: { exclude: ['image'] }  ///Pourquoi cet attribut?
         });
 
         if (!item) {
@@ -165,8 +165,3 @@ export async function markItemAsAvailable(itemId) {
     }
 }
 
- export async function getQtyByItemId(itemId) {
-         return await itemId.forEach(location => {
-                 item_id.quantite -1;
-        });
-        }

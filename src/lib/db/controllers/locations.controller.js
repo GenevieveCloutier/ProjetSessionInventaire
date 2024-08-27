@@ -25,7 +25,6 @@ export async function newLocation(p_date_emprunt, p_date_retour_prevue, p_date_r
         user_id: p_user_id,
         item_id: p_item_id
         });
-        console.log(resultat.dataValues);
     
         const item = await Items.findOne({ where : { id: p_item_id } });
 
@@ -36,14 +35,17 @@ export async function newLocation(p_date_emprunt, p_date_retour_prevue, p_date_r
             );
         }
         else {
-            console.log("quantité insuffisante");
+            console.log("quantité insuffisante"); 
+            //j'aimerais faire afficher un message d'erreur mais ça ne fonctionne pas
+            // const messageErreurElement = document.getElementById("messageErreur");
+            // messageErreurElement.textContent = "Quantité insuffisante"; 
+            // messageErreurElement.hidden = false;
         }
         return resultat.dataValues;
     } catch (error) {
             throw error;
         }
 }
-
 
 /**
  * Va chercher toutes les locations
@@ -106,7 +108,3 @@ export async function locationUser(p_where){
 };
 
 
-// export async function qtyRestante() {
-//    get.QtybyItemId
-
-// }

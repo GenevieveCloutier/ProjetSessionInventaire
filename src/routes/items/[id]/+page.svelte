@@ -57,7 +57,7 @@
 
                 <input type="date" id="date_retour_effective" name="date_retour_effective" value="" hidden>
                 
-                <p id="messageErreur" hidden >"Les mots de passe entrés ne sont pas identiques"</p>
+                <!-- <p id="messageErreur" hidden = true>"Quantité insuffisante"</p> ça ne fonctionne pas-->
 
                 <div id="boutonEnvoi"><BoutonSoumettre texte="Soumettre" /> </div>   
             </form>

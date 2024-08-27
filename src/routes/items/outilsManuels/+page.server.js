@@ -1,6 +1,5 @@
 
-import { findAll } from "$lib/db/controllers/items.controller";
-import { rechercher } from "$lib/db/controllers/items.controller";
+import { findAll, rechercher } from "$lib/db/controllers/items.controller";
 
 export async function load({params, url}) {
     const items = await findAll();

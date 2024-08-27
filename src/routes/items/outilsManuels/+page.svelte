@@ -8,6 +8,7 @@
     export let data;
     const items = data.items;
     const recherche = data.itemRecherche;
+    console.log(recherche)
    
 </script>
 
