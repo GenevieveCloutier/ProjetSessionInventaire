@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     import '/src/app.css';
     import BoutonSoumettre from '../../../components/boutonSoumettre.svelte';
     import Entete from "../../../components/entete.svelte";
@@ -30,7 +30,7 @@
     </select>
 
     <label for="quantite">Quantite</label>
-    <input type="number" name="quantite" id="quantite">
+    <input type="number" name="quantite" id="quantite"> -->
 
     <label for="statut">Statut</label>
     <select name="statut_item" id="statut_item">

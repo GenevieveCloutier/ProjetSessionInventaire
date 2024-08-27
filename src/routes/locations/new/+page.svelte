@@ -1,4 +1,4 @@
-<script>
+ <script>
     import '/src/app.css';
     import Entete from '../../../components/entete.svelte';
     export let data;
@@ -17,6 +17,7 @@
         <p>{item.description}</p>
         <p>{item.quantite}</p>
     </div>
+    <!-- 
     <div class="droite">
         <form method="POST" action="?/new">
 
@@ -35,5 +36,5 @@
 
             <input type="submit" value="Soumettre">
         </form>
-    </div>
-</div>
+    </div>-->
+</div>  
