@@ -14,6 +14,10 @@
 
     onMount(() => {
     if ($page.data.user.role_id == 1){
+        let boutonRole = document.querySelector("#boutonRole");
+        let boutonAjoutOutil = document.querySelector("#boutonAjoutOutil");
+        let boutonSuppOutil = document.querySelector("#boutonSuppOutil");
+        let boutonUsers = document.querySelector("#boutonUsers");
         boutonRole.hidden = false;
         boutonAjoutOutil.hidden = false;
         boutonSuppOutil = false;
