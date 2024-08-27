@@ -1,6 +1,8 @@
+<script>
+    import '/src/app.css';
+    import EnteteVide from '../../components/enteteVide.svelte';
 
-<script >
-  import EnteteVide from '../../components/enteteVide.svelte';
+  
 
   </script>
   

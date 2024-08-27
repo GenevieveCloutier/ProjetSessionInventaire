@@ -12,13 +12,15 @@ import { Roles } from "../models/roles.model";
  * @param {Number} p_role_id
  * @param {String} p_password
  */
-export async function newUser(p_nom, p_prenom, p_email, p_role_id, p_password){
+export async function newUser(p_nom, p_prenom,p_email,p_telephone,p_password,p_role_id,p_statut_user){
     Users.create({
         nom: p_nom,
         prenom: p_prenom,
         email: p_email,
+        telephone: p_telephone,
+        password: p_password,
         role_id: p_role_id,
-        password: p_password
+        statut_user: p_statut_user 
     })
     .then(resultat => {
         return resultat.dataValues;
@@ -146,16 +148,17 @@ export async function findOne(p_where){
  *
  * @export
  * @async
- * @param {String} p_nom
- * @param {String} p_prenom
+ * @param {String} email
  * @param {String} p_password
  * @returns {Object}
  */
-export async function authenticate(p_email, p_password){
+//export async function authenticate(p_email, p_password){
+    export async function authenticate(p_email, p_password){
 
     //Trouver l'utilisateur :
-    const user = await findOne({ email: p_email });
-
+   // const user = await findOne({ email: p_email });
+       const user = await findOne({ email: p_email, });
+        console.log 
     if(!user) throw "Utilisateur non trouvé";
 
     const goodPassword = await bcrypt.compare(p_password, user.password);

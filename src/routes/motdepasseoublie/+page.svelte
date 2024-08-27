@@ -1,3 +1,31 @@
+
+<script>
+  import '/src/app.css';
+  import EnteteVide from '../../components/enteteVide.svelte';
+
+
+
+//let username = '';
+//let password = '';
+</script>
+
+
+<EnteteVide/>
+<div class="login-container">
+<div class="login-box">
+  <h2>Mot de passe oublié</h2>
+  <form method="post">
+    <input type="hidden" name="action" value="login"> <!--ajouter test-->
+    <div class="input-group">
+      <label for="nom">Courriel</label>
+      <input type="email" name="email" id="email" required>
+    </div>
+ 
+    <button type="submit" class="login-btn">Envoyer</button>
+  </form>
+  
+</div>
+</div>
 <!--<scrip>
     import EnteteVide from '../../components/enteteVide.svelte';
     let username = '';
@@ -38,6 +66,7 @@
   }
 </script>
 -->
+<!--
   <style>
     .mot-de-passe-oublie-container {
         display: flex;
@@ -99,7 +128,7 @@
       color: green;
     }
   </style>
-  <!--
+  
   <EnteteVide/>
   <div class="mot-de-passe-oublie-container">
     <div class="mot-de-passe-oublie-box">
@@ -121,7 +150,8 @@
     </div>
   </div>
 
--->
+
+<!--
 <script>
   import EnteteVide from '../../components/enteteVide.svelte';
   let username = '';
@@ -150,8 +180,9 @@
       }
   }
 </script>
-
+-->
 <!-- Ajoutez un bloc pour afficher un message d'erreur -->
+<!--
 {#if errorMessage}
   <div class="error">{errorMessage}</div>
 {/if}
@@ -176,3 +207,5 @@
       {/if}
   </div>
 </div>
+
+-->
