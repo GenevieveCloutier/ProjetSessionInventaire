@@ -144,5 +144,29 @@ td{
     padding: 10px;
     
 }
+.login-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #695C4B;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
 
+.login-btn:hover {
+  background-color: #564D3D;
+}
+
+.forgot-password {
+  display: block;
+  margin-top: 1rem;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
 

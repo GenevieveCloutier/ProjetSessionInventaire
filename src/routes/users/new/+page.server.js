@@ -1,3 +1,19 @@
+
+import { newUser } from "$lib/db/controllers/users.controller.js";
+
+export const actions = {
+
+    new: async({ cookies, request })=>{
+      
+        const data = await request.formData();
+
+        
+        let res = await newUser(data.get("nom"), data.get("prenom"), data.get("email"), data.get("telephone"), data.get("password"),data.get("role"), data.get("statut_user"));
+
+        console.log(res);
+    }
+}
+
 /**
 import { newUser } from "$lib/db/controllers/users.controller.js";
 import { findAll } from "../../../lib/db/controllers/roles.controller";
@@ -19,7 +35,7 @@ export const actions = {
     }
 
 }
-*/
+
 /**
 import db from '$lib/server/db';
 import bcrypt from 'bcrypt';
@@ -69,7 +85,7 @@ export const actions = {
   }
 };
 
-*/
+
 
 import { createUser } from '$lib/db/controllers/users.controller';
 
@@ -96,3 +112,4 @@ export const actions = {
         }
     }
 };
+*/
