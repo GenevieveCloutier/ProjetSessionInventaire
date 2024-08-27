@@ -1,14 +1,15 @@
+
 <script>
   import BoutonSoumettre from '../../../components/boutonSoumettre.svelte';
   import Entete from "../../../components/entete.svelte";
 
-  export let data;
+ // export let data;
 
-  const items = data.item;
+//const items = data.item;
 </script>
 
 <Entete/>
-<h1>Creation de compte utilisateur</h1>
+ 
 <div class="form-container">
   <div class="form-box">
     <h2>Créer un nouvel utilisateur</h2>
@@ -42,13 +43,12 @@
         <label for="role">Rôle</label>
         <select name="role" id="role" required>
           <option value="">Veuillez sélectionner</option>
-          <option value="Employe">Employé</option>
-          <option value="Chef d'équipe">Chef d'équipe</option>
-          <option value="Administrateur">Administrateur</option>
-          <option value="divers">Divers</option>
+          <option value=3>Employé</option>
+          <option value=2>Chef d'équipe</option>
+          <option value=1>Administrateur</option>
         </select>
       </div>
-
+      <input type="hidden" name="statut_user" id="statut_user" value="actif" required readonly>
       <BoutonSoumettre texte={"Envoyer"} /> 
     </form>
   </div>

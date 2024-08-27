@@ -1,5 +1,5 @@
 
-import { createNewUser } from "$lib/db/controllers/newUser.controller.js";
+import { newUser } from "$lib/db/controllers/users.controller.js";
 
 export const actions = {
 
@@ -8,11 +8,12 @@ export const actions = {
         const data = await request.formData();
 
         
-        let res = await newItem(data.get("nom"), data.get("prenom"), data.get("email"), data.get("role"), data.get("password"));
+        let res = await newUser(data.get("nom"), data.get("prenom"), data.get("email"), data.get("telephone"), data.get("password"),data.get("role"), data.get("statut_user"));
 
         console.log(res);
     }
 }
+
 /**
 import { newUser } from "$lib/db/controllers/users.controller.js";
 import { findAll } from "../../../lib/db/controllers/roles.controller";
