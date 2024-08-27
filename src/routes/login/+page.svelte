@@ -1,11 +1,11 @@
 
 <script >
-  import EnteteVideVide from '../../components/enteteVideVide.svelte';
+  import EnteteVide from '../../components/enteteVide.svelte';
 
   </script>
   
   
-  <EnteteVide/>
+  <EnteteVide />
   <div class="login-container">
     <div class="login-box">
       <h2>Connexion</h2>
@@ -20,14 +20,6 @@
           <label for="password">Mot de passe</label>
           <input type="password" name="password" id="password" required>
         </div>
-<!-- 
-        {#if form?.invalid}
-            <p class="error">Le nom d'utilisateur et le mot de passe sont requis</p>
-        {/if}
-
-        {#if form?.credentials}
-          <p class="error">L'utilisateur et/ou le mot de passe ne sont pas valides</p>
-        {/if} -->
 
 
         <button type="submit" class="login-btn">Se connecter</button>
@@ -80,23 +72,3 @@
       text-decoration: underline;
     }
   </style>
-  
-  <EnteteVide/>
-  <div class="login-container">
-    <div class="login-box">
-      <h2>Connexion</h2>
-      <form on:submit|preventDefault={handleLogin}>
-        <div class="input-group">
-          <label for="username">Utilisateur</label>
-          <input type="text" id="username" bind:value={username} required>
-        </div>
-        <div class="input-group">
-          <label for="password">Mot de passe</label>
-          <input type="password" id="password" bind:value={password} required>
-        </div>
-        <button type="submit" class="login-btn">Se connecter</button>
-      </form>
-      <a href="/mot-de-passe-oublie" class="forgot-password">Mot de passe oublié</a>
-    </div>
-  </div>
-  
