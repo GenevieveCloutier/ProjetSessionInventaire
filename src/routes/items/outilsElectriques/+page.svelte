@@ -31,10 +31,10 @@
 {/each}
 
 
-<h1 id="titreTous">Tous les outils électriques</h1>
+<h1 id="titreTous">Tous les outils mélectriques</h1>
 <div class= "grid-container" id="tousOutils">
     {#each items as item}
-        {#if (item.categorie=="Outil électrique") }
+        {#if (item.categorie=="Outil mélectrique") }
             <div class="grid-item">
                 <ul>
                     <img src="../src/images/{item.image}" width="200" height="230" alt={item.nom}>

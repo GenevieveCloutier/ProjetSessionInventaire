@@ -5,15 +5,15 @@ import { Items } from './items.model.js';
 
 export const Locations = sequelize.define("locations", {
     date_emprunt: {
-        type: DataTypes.DATE, // est-ce qu'on met un champs date à la place?
+        type: DataTypes.DATE, 
         allowNull: false
     },
     date_retour_prevue: {
-        type: DataTypes.DATE, // est-ce qu'on met un champs date à la place?
+        type: DataTypes.DATE, 
         allowNull: false
     },
     date_retour_effective: {
-        type: DataTypes.DATE, // est-ce qu'on met un champs date à la place?
+        type: DataTypes.DATE, 
         allowNull: true
     },
     statut_location: {
