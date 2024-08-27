@@ -6,8 +6,6 @@
 
     const roles = data.roles;
 
-    console.log(roles)
-
 </script>
 <Entete />
 <div class="boite-1">

@@ -1,18 +1,12 @@
 <script>
 
-export const actions = {
-    recherche: async ({ cookies, request}) => {
-        const data = await request.formData();
-        console.log(data.get("recherche"))
-    }
-}
 
 </script>
 <div class=centrer>
-    <form method="GET" action="?/recherche">
+    <form method="GET" action="?/recherche"data-sveltekit-reload>
         <img class="icone" src="src/images/lignes.png" alt="icone menu">
         <input type="text" name="resultatRecherche" placeholder="rechercher dans le catalogue">
-        <button type="submit"><img class="icone" src="src/images/loupe.png" alt="icone loupe"></button>
+        <button type="submit"><img class="icone" src="src/images/loupe.png" alt="icone loupe" ></button>
     </form>
 </div>
 

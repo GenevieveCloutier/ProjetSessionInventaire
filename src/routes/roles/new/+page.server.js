@@ -8,7 +8,5 @@ export const actions = {
         const data = await request.formData();
         let res = await newRole(data.get("nom"), data.get("description"));
         throw redirect(303, '/confirmation');
-
     }
-
 }

@@ -1,44 +1,44 @@
 
-<script>
-  import Entete from '../../components/entete.svelte';
+<script >
+  import EnteteVide from '../../components/enteteVide.svelte';
 
-    let username = '';
-    let password = '';
-  
-    function handleLogin() {
-      // Ajoute ici la logique de connexion
-      console.log('Utilisateur:', username);
-      console.log('Mot de passe:', password);
-    }
   </script>
   
+  
+  <EnteteVide/>
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Connexion</h2>
+      <form method="POST" action="?/login">
+
+        <div class="input-group">
+          <label for="email" >Courriel associé au compte</label>
+          <input type="text" name="email" id="email" required>
+
+        </div>
+        <div class="input-group">
+          <label for="password">Mot de passe</label>
+          <input type="password" name="password" id="password" required>
+        </div>
+<!-- 
+        {#if form?.invalid}
+            <p class="error">Le nom d'utilisateur et le mot de passe sont requis</p>
+        {/if}
+
+        {#if form?.credentials}
+          <p class="error">L'utilisateur et/ou le mot de passe ne sont pas valides</p>
+        {/if} -->
+
+
+        <button type="submit" class="login-btn">Se connecter</button>
+      </form>
+      <a href="/mot-de-passe-oublie" class="forgot-password">Mot de passe oublié</a>
+    </div>
+  </div>
+
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
   
-    .login-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-image: url('/images/fond.png');
-      background-size: cover;
-      background-position: center;
-    }
-  
-    .login-box {
-      background-color: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      width: 300px;
-    }
-  
+    
     h2 {
       margin-bottom: 1.5rem;
     }
@@ -53,13 +53,7 @@
       margin-bottom: 0.5rem;
     }
   
-    input {
-      width: 100%;
-      padding: 0.5rem;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
-  
+   
     .login-btn {
       width: 100%;
       padding: 0.75rem;
@@ -87,21 +81,4 @@
     }
   </style>
   
-  <Entete/>
-  <div class="login-container">
-    <div class="login-box">
-      <h2>Connexion</h2>
-      <form on:submit|preventDefault={handleLogin}>
-        <div class="input-group">
-          <label for="username">Utilisateur</label>
-          <input type="text" id="username" bind:value={username} required>
-        </div>
-        <div class="input-group">
-          <label for="password">Mot de passe</label>
-          <input type="password" id="password" bind:value={password} required>
-        </div>
-        <button type="submit" class="login-btn">Se connecter</button>
-      </form>
-      <a href="/mot-de-passe-oublie" class="forgot-password">Mot de passe oublié</a>
-    </div>
-  </div>
+

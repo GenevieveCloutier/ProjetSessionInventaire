@@ -9,16 +9,14 @@
 <div class="login-container">
     <div class="login-box centrer">
 
-<h3>Merci!</h3><!-- passer le nom utilisateur ici quand le login sera fait-->
-<p>Ta demande a bien été envoyée!</p>
+<h1>Accès refusé!</h1>
 <BoutonBrun lien={"/items"} texte={"Retour au catalogue"}/>
 
     </div>
 </div>
+
 <style>
-
-.centrer{
-    text-align: center;
-}
-
+    .centrer{
+        text-align: center;
+    }
 </style>

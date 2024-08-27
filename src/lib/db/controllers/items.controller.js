@@ -74,9 +74,18 @@ export async function findOne(p_where){
 export async function rechercher(p_where){
     return await Items.findAll({
         where: {
-            nom : {
-                [Op.substring]: p_where
-            },
+             [Op.or]:{
+                nom : {
+                    [Op.substring]: p_where
+                },
+                description : {
+                    [Op.substring]: p_where
+                },
+                categorie : {
+                    [Op.substring]: p_where
+                },
+             }
+
         },
     }).then(resultat => {
         return resultat.map(item => item.dataValues);

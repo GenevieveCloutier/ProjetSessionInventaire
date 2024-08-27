@@ -2,8 +2,21 @@ import { DataTypes } from 'sequelize';
 import bcrypt from 'bcrypt';
 import { sequelize } from '../db.js';
 import { Roles } from './roles.model.js';
+import { v4 as uuidv4 } from 'uuid';
 
 export const Users = sequelize.define("users", {
+    id: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
+        defaultValue: () => uuidv4(),
+        //unique: true
+      },
+      userAuthToken: {
+        type: DataTypes.UUID,
+        allowNull: false,
+        defaultValue: () => uuidv4(),
+      },
     nom: {
         type: DataTypes.STRING,
         allowNull: false
@@ -18,7 +31,7 @@ export const Users = sequelize.define("users", {
     },
     email: {
         type: DataTypes.STRING,
-        allowNull: true //remettre false
+        allowNull: true, //remettre false
     },
     telephone: {
         type: DataTypes.STRING,
@@ -46,7 +59,6 @@ Users.addHook('beforeCreate',(async (user, option) => {
 Users.addHook('beforeUpdate',(async(user, option)=> {
     user.password = bcrypt.hashSync(user.password,10);
 }));
-
 
 Users.belongsTo(Roles, { foreignKey: 'role_id', as: 'role' });
 Roles.hasMany(Users, { foreignKey: 'role_id', as: 'users' });
