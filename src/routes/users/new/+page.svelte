@@ -67,9 +67,6 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('/images/fond.png');
-    background-size: cover;
-    background-position: center;
   }
 
   .form-box {

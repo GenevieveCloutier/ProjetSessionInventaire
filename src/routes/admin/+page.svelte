@@ -17,6 +17,7 @@
         boutonRole.hidden = false;
         boutonAjoutOutil.hidden = false;
         boutonSuppOutil = false;
+        boutonUsers = false;
     }
     else{
         boutonRole.hidden = true;
@@ -30,6 +31,7 @@
 <Entete />
 <h1>Bienvenue dans le portail Administrateur!</h1>
 
+
 <div class="button-container">
     <div class="row">
         <button id="boutonAjoutOutil" on:click={() => handleRedirect('/ajouterOutil')}>Ajouter un outil</button>
@@ -40,6 +42,7 @@
         <button id="boutonLocationOutil" on:click={() => handleRedirect('/')}>Outils en cours de location</button>
     </div>
     <div class="row">
+        <button id="boutonUsers" on:click={() => handleRedirect('/users')}>Afficher les utilisateurs</button> 
         <button id="boutonRole" on:click={() => handleRedirect('/roles')}>Afficher les rôles</button> 
         <!-- boutons marchent pas, sauf on actualise la page -->
     </div>

@@ -4,6 +4,7 @@ import { authenticate } from "../../lib/db/controllers/users.controller";
 
 export async function load({ cookies, locals }) {
     const session = cookies.get('session');
+    console.log(locals)
     
     //si une session est active, rediriger vers la page de compte de l'utilisateur
     if (session) {

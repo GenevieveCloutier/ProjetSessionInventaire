@@ -4,6 +4,7 @@
     import Entete from '../../components/entete.svelte';
     import BoutonBrun from '../../components/boutonBrun.svelte';
 	import Recherche from '../../components/recherche.svelte';
+    import { onMount } from 'svelte';
 
     export let data;
     const items = data.items;
@@ -29,10 +30,9 @@
     </div>
 </div>
 
-{:else}
-<h1>Résultats de recherche</h1>
-<p class ="recherche">Aucun outil ne correspond à la recherche!</p>
-
+<!-- {:else}
+<h1 id="h1Recherche">Résultats de recherche</h1>
+<p class ="recherche" id="pRecherche">Aucun outil ne correspond à la recherche!</p> -->
 {/each}
 
 

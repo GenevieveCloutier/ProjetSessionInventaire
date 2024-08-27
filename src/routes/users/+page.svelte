@@ -11,20 +11,37 @@
 
 <Entete />
 <div class="boite-1">
-{#each users as user}
-    <!-- la mise en forme des données est à faire, qui s'en occupe? -->
-    <h2>Utilisateur : {user.id}</h2>
-    <p>{user.nom}</p>
-    <p>{user.userAuthToken}</p>
-    <p>{user.prenom}</p>
-    <p>Role : {user.role.nom}</p>
-    <p>Description role : {user.role.description}</p>
-    <p>Password : {user.password}</p>
-    <a href="./users/{user.id}">Lien</a>
+    <h1>Tous les utilisateurs</h1>
+<table>
+    <tr>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Rôle</th>
+        <th>Statut</th>
+        <th class="sansBordure"></th>
+    </tr>
+    {#each users as user}
+    <tr>
+        <td>{user.prenom}</td>
+        <td>{user.nom}</td>
+        <td>{user.role.nom}</td>
+        <td>{user.statut_user}</td>
+        <td class="sansBordure"><a href = "/users/{user.id}/detailsUser"> <img src="/src/images/edit.png" alt="modifier l'utilisateur"></a></td>
+    </tr>   
+    {/each}
 
-{:else}
-    <p>Il n'y a pas d'utilisateur pour le moment!<br>
-        <BoutonBrun lien={"/users/new"} texte={"Ajouter un utilisateur"}/></p>
-{/each}
-
+</table>
+<BoutonBrun lien={"/users/new"} texte={"Ajouter un utilsateur"}/>
 </div>
+
+<style>
+    .sansBordure{
+        border-top: 1px solid white;
+        border-right: 1px solid white;
+        border-bottom: 1px solid white;
+        background-color: white;
+    }
+    img{
+        width: 20px;
+    }
+</style>

@@ -10,7 +10,6 @@ export const Users = sequelize.define("users", {
         primaryKey: true,
         allowNull: false,
         defaultValue: () => uuidv4(),
-        //unique: true
       },
       userAuthToken: {
         type: DataTypes.UUID,
@@ -31,15 +30,15 @@ export const Users = sequelize.define("users", {
     },
     email: {
         type: DataTypes.STRING,
-        allowNull: true, //remettre false
+        allowNull: false
     },
     telephone: {
         type: DataTypes.STRING,
-        allowNull: true //remettre false
+        allowNull: false
     },
     statut_user: {
-        type: DataTypes.ENUM('actif', 'inactif'),
-        allowNull: true //remettre false
+        type: DataTypes.STRING,
+        allowNull: false
     },
     role_id: {
         type: DataTypes.INTEGER,
