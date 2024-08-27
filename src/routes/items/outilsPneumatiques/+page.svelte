@@ -24,7 +24,7 @@
         <p>qty disponible: {r.quantite}</p>
         <p>date de disponibilité: {r.description}</p>
         <h3>#{r.id}</h3>
-        <BoutonBrun lien={`items/${r.id}`}  texte={"Louer"} />
+        <BoutonBrun lien={`../items/${r.id}`}  texte={"Louer"} />
     </ul>
     </div>
 </div>
@@ -42,7 +42,7 @@
                     <p>qty disponible: {item.quantite}</p>
                     <!-- <p>date de disponibilité: {item.description}</p> -->
                     <h3>#{item.id}</h3>
-                    <BoutonBrun lien={`items/${item.id}`}  texte={"Louer"} />
+                    <BoutonBrun lien={`../items/${item.id}`}  texte={"Louer"} />
                 </ul>
             </div>
         {/if}

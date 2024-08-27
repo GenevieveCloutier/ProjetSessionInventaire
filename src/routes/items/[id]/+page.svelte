@@ -22,7 +22,7 @@
 <div class="boite-1" id="boite_1">
     <div class="container1">
         <div class="gauche">
-            <img src="../src/images/{item.image}" width="200" height="230" alt={item.nom}><!--pourquoi ça ne fonctionne plus-->
+            <img src="../src/images/{item.image}" width="200" height="230" alt={item.nom}> <!--pourquoi ça ne fonctionne plus-->
             <h1>#{item.id}</h1>
             <h1>{item.nom}</h1>
             <p>Description: {item.description}</p>
@@ -33,7 +33,7 @@
     </div>
 
     <div class="droite" id="formLocation">
-            <form method="POST" action= "?/newLocation"> <!--pas certaine que action est correcte!! non, ce n'est pas correcte-->
+            <form method="POST" action= "?/newLocation">
                 <div class="form-group">
                 <label for="item_id"># item:  </label>
                     <input type="number" id="item_id" name="item_id" value="{item.id}" readonly>
