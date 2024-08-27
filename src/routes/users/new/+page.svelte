@@ -1,7 +1,6 @@
 
 <script>
     import Entete from '../../../components/entete.svelte';
-      import Entete from "../../../components/entete.svelte";
   
     let nom = '';
     let prenom = '';
@@ -50,7 +49,7 @@
           <input type="password" id="password" bind:value={password} required>
         </div>
         <div class="role-group">
-          <label>Rôle</label>
+          <!-- <label>Rôle</label> -->
           <label><input type="radio" name="role" value="Employé" bind:group={role} required> Employé</label>
           <label><input type="radio" name="role" value="Administrateur" bind:group={role} required> Administrateur</label>
           <label><input type="radio" name="role" value="Chef d'équipe" bind:group={role} required> Chef d'équipe</label>
