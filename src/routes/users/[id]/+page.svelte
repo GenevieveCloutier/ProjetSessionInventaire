@@ -3,7 +3,6 @@
     import Entete from '../../../components/entete.svelte';
     import BoutonBrun from '../../../components/boutonBrun.svelte';
     export let data;
-    let fonction = undefined;
 
     const user = data.user;
     const location = data.locations;
@@ -34,6 +33,14 @@
                     <td>{location.item.nom}</td>
                     <td>{location.statut_location}</td>
                 </tr>
+                {:else}
+                <tr>
+                    <td>Pas de location à afficher!</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
                 {/each}
         
             </table>
@@ -59,7 +66,7 @@
                 <tr>
                     <td></td>
                     <td class="caseDroite" id="boutonEdit">
-                        <a href = "{user.id}/editerProfil"><img src="/src/images/edit.png" alt="icone éditer"></a></td>
+                        <a href = "{user.id}/editerProfil"><img src="/src/images/edit.png" class="imgEdit" alt="icone éditer"></a></td>
                         
                 </tr>
             </table>
@@ -81,6 +88,9 @@
 
     img{
         width: 20px;
+    }
+    .imgEdit{
+        width: 30px
     }
 
     .table-2{

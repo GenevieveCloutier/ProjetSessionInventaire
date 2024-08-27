@@ -8,9 +8,6 @@
     export let data;
     const items = data.items;
     const recherche = data.itemRecherche;
-    console.log(recherche)
-
-    //console.log(items)
 
 </script>
 
@@ -31,6 +28,11 @@
     </ul>
     </div>
 </div>
+
+{:else}
+<h1>Résultats de recherche</h1>
+<p class ="recherche">Aucun outil ne correspond à la recherche!</p>
+
 {/each}
 
 
@@ -49,6 +51,16 @@
                 <BoutonBrun lien={`items/${item.id}`}  texte={"Louer"} />
             </ul>
         </div>
+    {:else}
+    <p>Il n'y a pas d'outils dans le catalogue pour le moment!</p>
     {/each}
 </div>
 
+<style>
+    .recherche{
+        color:red;
+        font-size: 30px;
+        background-color: rgba(255, 255, 255, 0.321);
+        padding: 20px;
+    }
+</style>

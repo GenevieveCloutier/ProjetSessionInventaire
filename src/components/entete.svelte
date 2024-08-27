@@ -1,16 +1,21 @@
 <script>
     import { page } from "$app/stores";
+    import { onMount } from 'svelte';
     import { goto} from "$app/navigation"; //importer goto
+    import { redirect } from "@sveltejs/kit";
 
     $:routeId = $page.route.id;
+    $:userId = $page.data.user ? $page.data.user.id : null;
 
-// passer en parametre le id après le login pour que le bouton Mon compte aille au compte de l'utilisateur
-// avec la deconnection, effacer les cookies pour effacer le id
-
-      function deconnecter(){
-          goto('/login');
-      };
-      
+    onMount(() => {
+    if ($page.data.user.role_id == 1 || $page.data.user.role_id == 3 ){
+        portailAdmin.hidden = false
+    }
+    else{
+        portailAdmin.hidden = true;
+    }
+});
+   
   </script>
   
   <body data-sveltekit-preload-data="hover">
@@ -24,11 +29,14 @@
                 <a href="/items/outilsManuels" class:active= {routeId == '/items/outilsManuels'}>OUTILS MANUELS</a>
                 <a href="/items/divers" class:active= {routeId == '/items/divers'}>DIVERS</a>
             </div>
-
             </div>
-          <a href = "/users" class:active = {routeId == '/users/[id]'} class="compte" >Mon compte</a>
-<!-- changer le lien de /users pour aller chercher le compte de l'utilisateur connecté-->
-          <button class="deconnexion" on:click={deconnecter}>Déconnexion</button>
+                <a href={userId ? `/users/${userId}` : '/login'} class:active={routeId.startsWith(`/users`)}>Mon compte</a>
+                <a href = "/admin" class:active = {routeId == '/admin'} class="admin" id="portailAdmin" hidden >Portail administrateur</a>
+            
+          <form class="logout" method="POST" action="/logout">
+            <input type="hidden" name="action" value="logout">
+            <button type="submit" class="deconnexion">Déconnexion</button>
+        </form> 
        </nav>
    </body>
   <style>
@@ -59,11 +67,11 @@
       cursor: pointer;
   }
   
-  .compte {
+  /* .compte {
     position: relative;
     display: inline-block;
 
-  }
+  } */
 
     .dropdown-content {
         display: none;

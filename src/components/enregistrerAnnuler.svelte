@@ -1,10 +1,11 @@
 <script>
     import BoutonSoumettre from "./boutonSoumettre.svelte";
     export let lien;
+    lien = "Modifier";
 </script>
 
 <div class="centrer">
-    <BoutonSoumettre texte="Modifier"/> 
+    <BoutonSoumettre /> 
     <a href = {lien}><button>Annuler</button></a>
 </div>
 <style>

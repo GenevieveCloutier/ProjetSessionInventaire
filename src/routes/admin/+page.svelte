@@ -1,26 +1,47 @@
 <script>
     import '/src/app.css';
     import Entete from '../../components/entete.svelte';
+    import { onMount } from 'svelte';
+    import { page } from "$app/stores";
     import { goto } from '$app/navigation'; 
 
 
     function handleRedirect(route) {
         goto(route);
     }
+
+    $:userId = $page.data.user ? $page.data.user.id : null;
+
+    onMount(() => {
+    if ($page.data.user.role_id == 1){
+        boutonRole.hidden = false;
+        boutonAjoutOutil.hidden = false;
+        boutonSuppOutil = false;
+    }
+    else{
+        boutonRole.hidden = true;
+        boutonAjoutOutil.hidden = true;
+        boutonSuppOutil.hidden = true;
+    }
+});
 </script>
 
 
 <Entete />
-<h1>Bienvenu au Portail Administrateur!</h1>
+<h1>Bienvenue dans le portail Administrateur!</h1>
 
 <div class="button-container">
     <div class="row">
-        <button on:click={() => handleRedirect('/ajouterOutil')}>Ajouter un outil</button>
-        <button on:click={() => handleRedirect('/modifierSupprimerOutil')}>Modifier ou supprimer un outil</button>
+        <button id="boutonAjoutOutil" on:click={() => handleRedirect('/ajouterOutil')}>Ajouter un outil</button>
+        <button id="boutonSuppOutil"on:click={() => handleRedirect('/modifierSupprimerOutil')}>Modifier ou supprimer un outil</button>
     </div>
     <div class="row">
-        <button on:click={() => handleRedirect('/remettreEnStock')}>Remettre un outil en stock</button>
-        <button on:click={() => handleRedirect('/outilsEnLocation')}>Outils en cours de location</button>
+        <button id="boutonStockOutil" on:click={() => handleRedirect('/')}>Remettre un outil en stock</button>
+        <button id="boutonLocationOutil" on:click={() => handleRedirect('/')}>Outils en cours de location</button>
+    </div>
+    <div class="row">
+        <button id="boutonRole" on:click={() => handleRedirect('/roles')}>Afficher les rôles</button> 
+        <!-- boutons marchent pas, sauf on actualise la page -->
     </div>
 </div>
 

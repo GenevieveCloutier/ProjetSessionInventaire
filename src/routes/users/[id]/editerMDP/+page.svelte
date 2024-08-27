@@ -2,6 +2,7 @@
     import '/src/app.css';
     import Entete from "../../../../components/entete.svelte";
 	import EnregistrerAnnuler from '../../../../components/enregistrerAnnuler.svelte';
+	import BoutonSoumettre from '../../../../components/boutonSoumettre.svelte';
     export let data;
 
     const user = data.user;
@@ -16,16 +17,19 @@
         if(MDP1.value != MDP2.value){
             messageErreur.hidden = false;
             boutonEditerMDP.disabled = true;
-            MDP2.value= "";
         }
         else
         {
             messageErreur.hidden = true;
             boutonEditerMDP.disabled = false;
+            MDP1.value= "";
+            MDP2.value= "";
         }
     };
 
     function nouvelEssai(){
+        let MDP2= document.querySelector("#MDP2");
+        MDP2.value= "";
         let messageErreur = document.querySelector("#messageErreur");
         let boutonEditerMDP = document.querySelector("#boutonEditerMDP");
         messageErreur.hidden = true;
@@ -40,7 +44,7 @@
     <div class="login-box">
     <h2>Modifier mon mot de passe</h2>
     <form method="POST" action="?/editerMDP">
-        <input type="number" name="user_id" value={user.id} hidden>
+        <input type="text" name="user_id" value={user.id} hidden readonly >
         <div class="input-group">
         <label for="password1">Nouveau mot de passe:</label>
         <input type="password" name="password1" id="MDP1" on:change{validerMDP} required>
@@ -50,8 +54,10 @@
         <input type="password" name="password2" id="MDP2" on:blur={validerMDP} on:focus={nouvelEssai} required><br><br>
         <p id="messageErreur" hidden >"Les mots de passe entrés ne sont pas identiques"</p>
 
-        <EnregistrerAnnuler lien={`/users/${user.id}`} />
-
+        <div class="centrer">
+            <BoutonSoumettre texte={"Modifier"}/>
+            <a href = "/users/{user.id}" ><button>Annuler</button></a>
+        </div>
     </form>
 
     </div>
@@ -68,6 +74,25 @@
     h2{
         text-align: center;
     }
+    button {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 4px;
+      background-color: gray;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: center;
+    }
+  
+    button:hover {
+      background-color: #695C4B;
+    }
+
+    .centrer{
+        text-align: center;
+    }
+
 
 
 </style>

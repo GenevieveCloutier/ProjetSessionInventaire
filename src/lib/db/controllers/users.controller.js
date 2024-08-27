@@ -12,10 +12,11 @@ import { Roles } from "../models/roles.model";
  * @param {Number} p_role_id
  * @param {String} p_password
  */
-export async function newUser(p_nom, p_prenom, p_role_id, p_password){
+export async function newUser(p_nom, p_prenom, p_email, p_role_id, p_password){
     Users.create({
         nom: p_nom,
         prenom: p_prenom,
+        email: p_email,
         role_id: p_role_id,
         password: p_password
     })
@@ -150,15 +151,17 @@ export async function findOne(p_where){
  * @param {String} p_password
  * @returns {Object}
  */
-export async function authenticate(p_nom, p_prenom, p_password){
-        //Trouver l'utilisateur :
-        const user = await findOne({ nom: p_nom, prenom: p_prenom });
+export async function authenticate(p_email, p_password){
 
-        if(!user) throw "Utilisateur non trouvé";
+    //Trouver l'utilisateur :
+    const user = await findOne({ email: p_email });
 
-        const goodPassword = await bcrypt.compare(p_password, user.password);
+    if(!user) throw "Utilisateur non trouvé";
 
-        if(!goodPassword) throw "Mot de passe invalide";
+    const goodPassword = await bcrypt.compare(p_password, user.password);
 
-        return user;
-}
+    if(!goodPassword) throw "Mot de passe invalide";
+
+    return user;
+};
+

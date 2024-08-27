@@ -2,7 +2,7 @@
     import BoutonBrun from '../components/boutonBrun.svelte'
 	import EnteteVide from '../components/enteteVide.svelte';
     import '/src/app.css';
-    let fonction = undefined;
+    
 </script>
 <EnteteVide />
 <div class="boite-1">

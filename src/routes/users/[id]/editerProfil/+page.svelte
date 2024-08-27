@@ -1,9 +1,6 @@
-
 <script>
     import BoutonSoumettre from '../../../../components/boutonSoumettre.svelte';
-	import EnregistrerAnnuler from '../../../../components/enregistrerAnnuler.svelte';
 	import Entete from '../../../../components/entete.svelte';
-    let fonction = undefined;
     import '/src/app.css';
     export let data;
 
@@ -38,13 +35,16 @@
 
         <div class="input-group">
         <label for="telephone">Téléphone</label>
-        <input type="text" name="telephone" value = {user.telephone} on:click={effacerTexte} required >
+        <input type="tel" name="telephone" value = {user.telephone} on:click={effacerTexte} required >
         <div class="input-group">
         <label for="email">Courriel</label>
         <input type="text" name="email" value = {user.email} on:click={effacerTexte} required><br><br>
         </div>
-        <!-- input pour modifier le role mais ce champs s'Affiche juste si c'est un admin?-->
-        <EnregistrerAnnuler lien={`users/${user.id}`} />
+
+        <div class="centrer">
+            <BoutonSoumettre texte={"Modifier"}/>
+            <a href = "/users/{user.id}" ><button>Annuler</button></a>
+        </div>
     </form>
     </div>
 </div>
@@ -54,6 +54,25 @@
         text-align: center;
         padding: 10px;
     }
+    button {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 4px;
+      background-color: gray;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: center;
+    }
+  
+    button:hover {
+      background-color: #695C4B;
+    }
+
+    .centrer{
+        text-align: center;
+    }
+
 
 
 </style>

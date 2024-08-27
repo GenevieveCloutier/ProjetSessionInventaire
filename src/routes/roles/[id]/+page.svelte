@@ -15,7 +15,9 @@
 <Entete />
 <div class="login-container">
     <div class="login-box">
-    <h2>Modifier le rôle # {role.id}</h2>
+    <h2>Modifier le rôle {role.nom}</h2>
+    <p>Il n'est pas permis de modifier l'identifiant ou le nom du rôle car ceci comprometterait l'intégrité 
+        de la plateforme!</p>
 
     <form method="POST" action="?/editerRole">
 
@@ -25,13 +27,14 @@
     </div>
     <div class="input-group">
     <label for="nom">Nom du rôle:</label>
-    <input type="text" name="nom" value={role.nom} on:click={effacerTexte}><br><br>
+    <input type="text" name="nom" value={role.nom} readonly><br><br>
     </div>
     <label for="description">Description du rôle:</label>
     <textarea name="description"  cols="38" rows="10" value={role.description} on:click={effacerTexte}></textarea>
     
     <div class="centrer">
-        <EnregistrerAnnuler lien={"/roles"} />
+        <BoutonSoumettre texte={"Modifier"}/>
+        <a href = "/roles" ><button>Annuler</button></a>
     </div>
     </form>
     </div>
@@ -40,6 +43,28 @@
 <style>
 
     .centrer, h2{
+        text-align: center;
+    }
+    p{  
+        text-align: center
+    }
+
+    button {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 4px;
+      background-color: gray;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: center;
+    }
+  
+    button:hover {
+      background-color: #695C4B;
+    }
+
+    .centrer{
         text-align: center;
     }
 </style>
