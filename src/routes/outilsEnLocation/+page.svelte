@@ -1,6 +1,8 @@
 <script>
     import '/src/app.css';
     import Entete from '../../components/entete.svelte';
+    import BoutonBrun from '../../components/boutonBrun.svelte';
+	import { text } from '@sveltejs/kit';
 
     export let data;
     let locations = data.locations;
@@ -41,6 +43,7 @@
                         <td>{location.statut_location}</td>
                         <td>{location.user.nom} {location.user.prenom}</td>
                         <td>{location.item.nom}</td>
+                        <td><BoutonBrun texte={"Retourner"}/></td> <!--reste à mettre la fonction -->
                     </tr>
                 {/each}
             </tbody>

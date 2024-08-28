@@ -15,7 +15,6 @@ export const actions = {
             const image = formData.get('image'); 
             const buffer = Buffer.from(await image.arrayBuffer());
             const filePath = path.resolve('src/images', image.name);
-
             fs.writeFileSync(filePath, buffer);
 
             console.log("Form Data Received:", { nom, description, categorie, quantite });
@@ -26,8 +25,7 @@ export const actions = {
             }
             const blob = new Blob([image], { type: image.type });
             const result = await newItem(nom, description, categorie, quantite, image.name,'Disponible');
-            console.log("+++++++++++++++++++++++++")
-            console.log(image.name);
+            
             console.log("New item added successfully:", result);
 
 

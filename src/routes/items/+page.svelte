@@ -9,7 +9,9 @@
     export let data;
     const items = data.items;
     const recherche = data.itemRecherche;
+    
    
+   console.log(items);
 </script>
 
 <Entete/>
@@ -30,9 +32,6 @@
     </div>
 </div>
 
-<!-- {:else}
-<h1 id="h1Recherche">Résultats de recherche</h1>
-<p class ="recherche" id="pRecherche">Aucun outil ne correspond à la recherche!</p> -->
 {/each}
 
 
@@ -41,7 +40,7 @@
     {#each items as item}
         <div class="grid-item">
             <ul>
-                <img src="src/images/{item.image}" width="200" height="230" alt={item.nom}>
+                <img src="../src/images/{item.image}" width="200" height="230" alt={item.nom}>
                 <h2>{item.nom}</h2>
                 <p>qty disponible: {item.quantite}</p>
                 <!-- <p>date de disponibilité: {item.description}</p> -->

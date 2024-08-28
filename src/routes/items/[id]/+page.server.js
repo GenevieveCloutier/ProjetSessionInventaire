@@ -3,7 +3,7 @@ import { findOne } from "$lib/db/controllers/items.controller.js";
 import { newLocation } from "../../../lib/db/controllers/locations.controller";
 import { redirect } from '@sveltejs/kit';
 import { error } from '@sveltejs/kit';
-import { findOne } from '../../../lib/db/controllers/users.controller'
+
 
 export async function load({ params }){
     const idItem = params.id;
@@ -28,7 +28,7 @@ export const actions = {
       data.get("date_retour_effective"), 
       statut, data.get("user_id"),  
       data.get("item_id"));
-
+      
       throw redirect(303, '/confirmation');
      }
   } 

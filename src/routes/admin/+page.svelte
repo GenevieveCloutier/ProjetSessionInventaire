@@ -42,8 +42,8 @@
         <button id="boutonSuppOutil"on:click={() => handleRedirect('/modifierSupprimerOutil')}>Modifier ou supprimer un outil</button>
     </div>
     <div class="row">
-        <button id="boutonStockOutil" on:click={() => handleRedirect('/')}>Remettre un outil en stock</button>
-        <button id="boutonLocationOutil" on:click={() => handleRedirect('/')}>Outils en cours de location</button>
+        <button id="boutonStockOutil" on:click={() => handleRedirect('/remettreEnStock')}>Remettre un outil en stock</button>
+        <button id="boutonLocationOutil" on:click={() => handleRedirect('/outilsEnLocation')}>Outils en cours de location</button>
     </div>
     <div class="row">
         <button id="boutonUsers" on:click={() => handleRedirect('/users')}>Afficher les utilisateurs</button> 

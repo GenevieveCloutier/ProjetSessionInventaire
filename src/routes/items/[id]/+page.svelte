@@ -7,13 +7,10 @@
 
     export let data;
     const item = data.item;
-    
+    // va chercher les infos du user
      const user = $page.data.user;
-     //console.log("==================", user);
-     console.log("==================" + user.id);
 
     function effacerData() {
-        //document.getElementById('qty').value = '';
         document.getElementById('date_emprunt').value = '';
         document.getElementById('date_retour_prevue').value = '';
         document.getElementById('user_id').value = '';
@@ -42,10 +39,6 @@
                 <label for="item_id"># item:  </label>
                     <input type="number" id="item_id" name="item_id" value="{item.id}" readonly>
                 </div>
-                <!-- <div class="form-group">
-                <label for="qty">Quantité:  </label>
-                    <input type="number" name="quantite" id="qty">
-                </div> -->
                 <div class="form-group">
                 <label for="date_emprunt">Date de début de location:   </label>
                     <input type="date" name="date_emprunt" id="date_emprunt">
@@ -54,14 +47,12 @@
                 <label for="date_retour_prevue">Date de retour de location:   </label>
                     <input type="date" name="date_retour_prevue" id="date_retour_prevue">
                 </div>
-                <div class="form-group">
-                <label for="user_id"># utilisateur:  </label>
-                    <input type="number" name="user_id" id="user_id" value={user.id} readonly> <!--quand les cessions vont être active, on devrait mettre le id automatique + readonly-->
-                </div>
+
+                <input type="string" name="user_id" id="user_id" value={user.id} hidden>
 
                 <input type="date" id="date_retour_effective" name="date_retour_effective" value="" hidden>
                 
-                <!-- <p id="messageErreur" hidden = true>"Quantité insuffisante"</p> ça ne fonctionne pas-->
+                <p id="messageErreur" hidden>"Quantité insuffisante"</p>
 
                 <div id="boutonEnvoi"><BoutonSoumettre texte="Soumettre" /> </div>   
             </form>

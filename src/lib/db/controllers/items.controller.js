@@ -10,7 +10,7 @@ import { Op } from 'sequelize';
  * @param {String} p_description
  * @param {String} p_categorie
  * @param {Number} p_quantite
- * @param {file} p_image
+ * @param {String} p_image
  * @param {String} p_statut_item
  */
 export async function newItem(p_nom, p_description, p_categorie, p_quantite, p_image, p_statut_item) {
@@ -36,14 +36,20 @@ export async function newItem(p_nom, p_description, p_categorie, p_quantite, p_i
  * @async
  * @returns {Object}
  */
-export async function findAll(){
-    return await Items.findAll().then(resultat => {
-        return resultat.map(item => item.dataValues);
-    })
-    .catch((error)=>{
-        throw error;
-    });
-}
+ export async function findAll(){
+     return await Items.findAll({
+        where: {
+           statut_item: {
+            [Op.not]: "Supprimé"
+           }
+        }
+     }).then(resultat => {
+         return resultat.map(item => item.dataValues);
+     })
+     .catch((error)=>{
+         throw error;
+     });
+ }
 
 /**
  * Find Item
@@ -56,8 +62,8 @@ export async function findAll(){
 export async function findOne(p_where) {
     try {
         const item = await Items.findOne({
-            where: p_where,
-            attributes: { exclude: ['image'] }  ///Pourquoi cet attribut?
+            where: p_where
+            //attributes: { exclude: ['image'] }  ///Pourquoi cet attribut?
         });
 
         if (!item) {
