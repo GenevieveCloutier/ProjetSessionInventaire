@@ -3,7 +3,6 @@ import { Users } from "../models/users.model";
 import { Amendes } from "../models/amendes.modele";
 import { Items } from "../models/items.model";
 
-
 /**
  * Création d'un nouvelle location
  *
@@ -35,6 +34,7 @@ export async function newLocation(p_date_emprunt, p_date_retour_prevue, p_date_r
             );
         }
         else {
+
             console.log("quantité insuffisante"); 
             //j'aimerais faire afficher un message d'erreur mais ça ne fonctionne pas
             // const messageErreurElement = document.getElementById("messageErreur");
@@ -42,6 +42,7 @@ export async function newLocation(p_date_emprunt, p_date_retour_prevue, p_date_r
             // messageErreurElement.hidden = false;
         }
         return resultat.dataValues;
+       
     } catch (error) {
             throw error;
         }

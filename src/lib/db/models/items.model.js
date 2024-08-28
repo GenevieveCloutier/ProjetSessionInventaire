@@ -19,7 +19,7 @@ export const Items = sequelize.define("items", {
         allowNull: false
     },
     image: {
-        type: DataTypes.BLOB,
+        type: DataTypes.STRING,
         allowNull: true
     },
     statut_item: {

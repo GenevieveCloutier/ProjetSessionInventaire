@@ -28,7 +28,7 @@ export const actions = {
       data.get("date_retour_effective"), 
       statut, data.get("user_id"),  
       data.get("item_id"));
-
+      
       throw redirect(303, '/confirmation');
      }
   } 
