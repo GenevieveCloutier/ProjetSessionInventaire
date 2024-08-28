@@ -60,7 +60,7 @@
                         <td>{item.statut_item}</td>
   
                         <td>
-                            {#if item.statut_item === 'Supprimé'}
+                            {#if item.statut_item === 'Supprimé' || item.statut_item === 'Emprunté'}
                             <button class="button restock" on:click={() => markAsAvailable(item.id)}>Remettre en stock</button>
                             {/if}
                         </td>
