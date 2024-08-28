@@ -1,4 +1,5 @@
 <script>
+    import { page } from "$app/stores";
     import '/src/app.css';
     import Entete from '../../../components/entete.svelte';
     import BoutonGris from '../../../components/boutonGris.svelte';
@@ -7,6 +8,8 @@
     export let data;
     const item = data.item;
     
+     const user = $page.data.user
+     console.log("==================" + user.id)
 
     function effacerData() {
         //document.getElementById('qty').value = '';
@@ -52,7 +55,7 @@
                 </div>
                 <div class="form-group">
                 <label for="user_id"># utilisateur:  </label>
-                    <input type="number" name="user_id" id="user_id"> <!--quand les cessions vont être active, on devrait mettre le id automatique + readonly-->
+                    <input type="number" name="user_id" id="user_id" value=2 readonly> <!--quand les cessions vont être active, on devrait mettre le id automatique + readonly-->
                 </div>
 
                 <input type="date" id="date_retour_effective" name="date_retour_effective" value="" hidden>
