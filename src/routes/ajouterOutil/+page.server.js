@@ -1,4 +1,6 @@
 import { newItem } from "$lib/db/controllers/items.controller"; 
+import fs from 'fs';
+import path from 'path';
 
 
 export const actions = {
@@ -11,7 +13,10 @@ export const actions = {
             const categorie = formData.get('categorie');
             const quantite = formData.get('quantite');
             const image = formData.get('image'); 
-            //const buffer = Buffer.from(await image.arrayBuffer());
+            const buffer = Buffer.from(await image.arrayBuffer());
+            const filePath = path.resolve('src/images', image.name);
+
+            fs.writeFileSync(filePath, buffer);
 
             console.log("Form Data Received:", { nom, description, categorie, quantite });
 
@@ -20,8 +25,9 @@ export const actions = {
                 return { success: false, error: "Missing required fields" };
             }
             const blob = new Blob([image], { type: image.type });
-            const result = await newItem(nom, description, categorie, quantite, blob,'Disponible');
-
+            const result = await newItem(nom, description, categorie, quantite, image.name,'Disponible');
+            console.log("+++++++++++++++++++++++++")
+            console.log(image.name);
             console.log("New item added successfully:", result);
 
 

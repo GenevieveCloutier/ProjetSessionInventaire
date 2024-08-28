@@ -8,8 +8,9 @@
     export let data;
     const item = data.item;
     
-     const user = $page.data.user
-     console.log("==================" + user.id)
+     const user = $page.data.user;
+     //console.log("==================", user);
+     console.log("==================" + user.id);
 
     function effacerData() {
         //document.getElementById('qty').value = '';
@@ -25,7 +26,7 @@
 <div class="boite-1" id="boite_1">
     <div class="container1">
         <div class="gauche">
-            <img src="../src/images/{item.image}" width="200" height="230" alt={item.nom}> <!--pourquoi ça ne fonctionne plus-->
+            <img src="../src/images/{item.image}" width="200" height="230" alt={item.nom}> 
             <h1>#{item.id}</h1>
             <h1>{item.nom}</h1>
             <p>Description: {item.description}</p>
@@ -55,7 +56,7 @@
                 </div>
                 <div class="form-group">
                 <label for="user_id"># utilisateur:  </label>
-                    <input type="number" name="user_id" id="user_id" value=2 readonly> <!--quand les cessions vont être active, on devrait mettre le id automatique + readonly-->
+                    <input type="number" name="user_id" id="user_id" value={user.id} readonly> <!--quand les cessions vont être active, on devrait mettre le id automatique + readonly-->
                 </div>
 
                 <input type="date" id="date_retour_effective" name="date_retour_effective" value="" hidden>
