@@ -37,6 +37,21 @@ export const actions = {
                         console.log("========================= " +profil)//ok retourne le id
                         throw redirect(303, `/users/${profil}`);
                 }
+                // faudrais esseiller ce code si il fonction sur la version du main
+                /**    // Redirection vers le profil utilisateur
+            const profil = auth.id;
+            console.log("========================= " + profil); // OK retourne le ID
+            throw redirect(303, `/users/${profil}`);
+            
+        } catch (error) {
+            console.log("Erreur lors de la connexion : ", error);
+            
+            // Retourner l'erreur au formulaire, ici un message d'erreur générique est renvoyé.
+            return {
+                error: true,
+                message: "Email ou mot de passe incorrect.",
+
+                */
             //catch (error) {
            // console.log("Erreur lors de la connexion : ", error);
             //Gérer l'erreur ici, par exemple en renvoyant une erreur au formulaire IMPORTANT DE LE FAIRE!
