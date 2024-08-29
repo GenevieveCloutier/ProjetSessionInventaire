@@ -10,16 +10,6 @@
         this.value = "";
     }
 
-    function validerSuppression(){
-        let texte = "Voulez-vous vraiment supprimer cet utilisateur?";
-        if (confirm(texte) == true) {
-            texte = "Utilisateur supprimé";
-        } 
-        else {
-            texte = "operation annulée";
-            preventDefault()
-        }
-    }
 </script>
 
 <Entete />
@@ -80,7 +70,7 @@
             <input type="text" name="idUser" value={user.id} hidden>
             <input type="text" name="statut_user" value="supprime" hidden>
             <input type="text" name="role_id" value=4 hidden>
-            <button on:click={validerSuppression} class="boutonSupprimer" type="submit">SUPPRIMER L'UTILISATEUR</button>
+            <button class="boutonSupprimer" type="submit">SUPPRIMER L'UTILISATEUR</button>
         </form>
     </div>
     </div>
