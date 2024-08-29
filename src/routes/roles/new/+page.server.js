@@ -7,6 +7,6 @@ export const actions = {
     new: async({ cookies, request })=>{
         const data = await request.formData();
         let res = await newRole(data.get("nom"), data.get("description"));
-        throw redirect(303, '/confirmation');
+        throw redirect(303, '/roles');
     }
 }

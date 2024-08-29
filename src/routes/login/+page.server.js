@@ -40,7 +40,8 @@ export const actions = {
             //catch (error) {
            // console.log("Erreur lors de la connexion : ", error);
             //Gérer l'erreur ici, par exemple en renvoyant une erreur au formulaire IMPORTANT DE LE FAIRE!
-            // Ça plante si le user n'existe pas
+            // Ça redirige à la page d'erreur si le user n'existe pas au lieu d'informer l'utilisateur de ce qui se passe, Isael :)
+            
         }
     //}
 //};

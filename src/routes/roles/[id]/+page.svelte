@@ -2,7 +2,7 @@
     import Entete from '../../../components/entete.svelte';
     import BoutonSoumettre from '../../../components/boutonSoumettre.svelte';
     import '/src/app.css';
-	import EnregistrerAnnuler from '../../../components/enregistrerAnnuler.svelte';
+
     export let data;
     const role = data.role;
 
@@ -45,6 +45,7 @@
     .centrer, h2{
         text-align: center;
     }
+    
     p{  
         text-align: center
     }

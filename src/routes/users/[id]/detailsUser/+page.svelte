@@ -10,8 +10,15 @@
         this.value = "";
     }
 
-    function supprimerUser(){
-        console.log("suppr.")
+    function validerSuppression(){
+        let texte = "Voulez-vous vraiment supprimer cet utilisateur?";
+        if (confirm(texte) == true) {
+            texte = "Utilisateur supprimé";
+        } 
+        else {
+            texte = "operation annulée";
+            preventDefault()
+        }
     }
 </script>
 
@@ -20,7 +27,7 @@
     <div class="login-box">
     <h2>Modifier l'utilisateur</h2>
     
-    <form method="POST" action="?/editerProfil">
+    <form method="POST" action="?/editerProfilAdmin">
         <div class="input-group">
             <label for="idUser">Identifiant de l'utilisateur</label>
             <input type="text" name="idUser" value={user.id} readonly>
@@ -50,8 +57,8 @@
             <label for="role_id">Rôle actuel:{user.role.nom}</label>  
             <select name="role_id" id="role_id" required>
                 <option value="">Veuillez sélectionner</option>
-                <option value=3>Employé</option>
-                <option value=2>Chef d'équipe</option>
+                <option value=2>Employé</option>
+                <option value=3>Chef d'équipe</option>
                 <option value=1>Administrateur</option>
               </select>
         </div>
@@ -70,9 +77,10 @@
         <div>
         <br>
         <form method="POST" action="?/supprimerUser">
-            <input type=text name="idUser" value={user.id} hidden>
-            <input type=text name="statut_user" value="supprime" hidden>
-            <button class="boutonSupprimer" type="submit">SUPPRIMER L'UTILISATEUR</button>
+            <input type="text" name="idUser" value={user.id} hidden>
+            <input type="text" name="statut_user" value="supprime" hidden>
+            <input type="text" name="role_id" value=4 hidden>
+            <button on:click={validerSuppression} class="boutonSupprimer" type="submit">SUPPRIMER L'UTILISATEUR</button>
         </form>
     </div>
     </div>

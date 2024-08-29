@@ -66,12 +66,6 @@
       display: inline-block;
       cursor: pointer;
   }
-  
-  /* .compte {
-    position: relative;
-    display: inline-block;
-
-  } */
 
     .dropdown-content {
         display: none;

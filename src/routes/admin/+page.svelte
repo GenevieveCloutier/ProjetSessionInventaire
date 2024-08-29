@@ -27,6 +27,7 @@
         boutonRole.hidden = true;
         boutonAjoutOutil.hidden = true;
         boutonSuppOutil.hidden = true;
+        boutonUsers.hidden = true;
     }
 });
 </script>
@@ -48,7 +49,6 @@
     <div class="row">
         <button id="boutonUsers" on:click={() => handleRedirect('/users')}>Afficher les utilisateurs</button> 
         <button id="boutonRole" on:click={() => handleRedirect('/roles')}>Afficher les rôles</button> 
-        <!-- boutons marchent pas, sauf on actualise la page -->
     </div>
 </div>
 

@@ -14,15 +14,15 @@ export async function load({ params }){
 		error(404, {
 			message: 'Page non trouvée'
 		})
-    } 
-
+  } 
     return { user:user, locations:locations };
 };
 
+//pour aller chercher les données du formulaire et les insérer dans la BD
 export const actions = {
   editerProfil: async ({ cookies, request }) => {
     const data = await request.formData();
     await updateUser(data.get("idUser"), data.get("prenom"), data.get("nom"), data.get("telephone"), data.get("email"));
     throw redirect(303, '/confirmation');
   }
-} 
+};

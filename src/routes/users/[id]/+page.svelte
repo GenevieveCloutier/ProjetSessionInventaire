@@ -2,8 +2,8 @@
     import '/src/app.css';
     import Entete from '../../../components/entete.svelte';
     import BoutonBrun from '../../../components/boutonBrun.svelte';
+    
     export let data;
-
     const user = data.user;
     const location = data.locations;
 

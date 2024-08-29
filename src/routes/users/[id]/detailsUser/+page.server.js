@@ -20,7 +20,7 @@ export async function load({ params }){
 
 export const actions = {
   
-  editerProfil: async ({ cookies, request }) => {
+  editerProfilAdmin: async ({ cookies, request }) => {
     const data = await request.formData();
     await updateUser(data.get("idUser"), data.get("prenom"), data.get("nom"), data.get("telephone"), data.get("email"), data.get("role_id"), data.get("statut_user"));
     throw redirect(303, '/users');

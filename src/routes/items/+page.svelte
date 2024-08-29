@@ -4,7 +4,6 @@
     import Entete from '../../components/entete.svelte';
     import BoutonBrun from '../../components/boutonBrun.svelte';
 	import Recherche from '../../components/recherche.svelte';
-    import { onMount } from 'svelte';
 
     export let data;
     const items = data.items;
@@ -16,7 +15,8 @@
 <Recherche />
 
 {#each recherche as r}
-<h1>Résultats de recherche</h1>
+<h1>Résultats de recherche pour: {r.nom}</h1>
+
 <div class="grid-container" id="outilRecherche">
     <div class="grid-item">
     <ul>

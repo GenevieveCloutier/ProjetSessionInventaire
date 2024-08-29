@@ -12,6 +12,6 @@ export const actions = {
     editerRole: async ({ cookies, request }) => {
       const data = await request.formData();
       await updateRole(data.get("idRole"), data.get("nom"), data.get("description"));
-      throw redirect(303, '/confirmation');
+      throw redirect(303, '/roles');
     }
   } 

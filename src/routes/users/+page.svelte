@@ -1,7 +1,6 @@
 <script>
     import '/src/app.css';
     import Entete from '../../components/entete.svelte';
-    import { onMount } from 'svelte';
     import BoutonBrun from '../../components/boutonBrun.svelte';
 
     export let data;
@@ -28,6 +27,14 @@
         <td>{user.statut_user}</td>
         <td class="sansBordure"><a href = "/users/{user.id}/detailsUser"> <img src="/src/images/edit.png" alt="modifier l'utilisateur"></a></td>
     </tr>   
+    {:else}
+    <tr>
+        <td>Pas d'utilisateur à afficher!</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
+    </tr>
     {/each}
 
 </table>

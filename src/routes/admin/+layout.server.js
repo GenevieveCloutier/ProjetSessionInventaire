@@ -5,16 +5,17 @@ export const load = async ({ cookies }) => {
     const session = cookies.get('session');
     
     if (!session) {
-        // Redirige vers la page de connexion si l'utilisateur n'est pas connecté
+//rediriger vers la page de connexion si l'utilisateur n'est pas connecté
         throw redirect(303, '/login');
     }
     const user = await findOne({ userAuthToken : session });
 
-    if ((user.role_id != 1) && (user.role_id != 3)) { 
-        
-        // Redirige si l'utilisateur n'est pas administrateur ou un chef d'équipe
-        throw redirect(303, '/accesRefuse');
-    }
+//empecher l'accès si l'utilisateur n'est pas admininstrateur ou un chef d'équipe
+const roleAuth = [1, 3];
+
+if (!roleAuth.includes(user.role_id)) {
+    throw redirect(303, '/accesRefuse');
+}
 
     return {
         user

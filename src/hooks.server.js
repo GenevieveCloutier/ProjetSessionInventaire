@@ -12,7 +12,8 @@ import { findOne } from './lib/db/controllers/users.controller'
             event.locals.user = {
                 id: user.id,
                 name:user.nom,
-                role:user.role.nom
+                role:user.role.nom, 
+                statut_user:user.statut_user
             } 
         }
 

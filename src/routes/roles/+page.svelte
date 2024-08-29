@@ -2,8 +2,8 @@
     import '/src/app.css';
     import Entete from '/src/components/entete.svelte';
     import BoutonBrun from '../../components/boutonBrun.svelte';
-    export let data;
 
+    export let data;
     const roles = data.roles;
 
 </script>
@@ -23,8 +23,15 @@
         <td>{role.nom}</td>
         <td>{role.description}</td>
         <td class="sansBordure"><a href = "/roles/{role.id}"> <img src="/src/images/edit.png" alt="modifier le rôle"></a></td>
-    </tr>   
-    {/each}
+    </tr>  
+    {:else}
+    <tr>
+        <td>Pas de rôle à afficher!</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
+    </tr>
+    {/each} 
 
 </table>
 <BoutonBrun lien={"/roles/new"} texte={"Ajouter un rôle"}/>

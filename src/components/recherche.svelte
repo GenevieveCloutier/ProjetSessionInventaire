@@ -1,7 +1,4 @@
-<script>
 
-
-</script>
 <div class=centrer>
     <form method="GET" action="?/recherche"data-sveltekit-reload>
         <img class="icone" src="/src/images/lignes.png" alt="icone menu">

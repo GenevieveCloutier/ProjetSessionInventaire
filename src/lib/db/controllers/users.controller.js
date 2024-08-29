@@ -189,11 +189,9 @@ export async function findOne(p_where){
  * @param {String} p_password
  * @returns {Object}
  */
-//export async function authenticate(p_email, p_password){
     export async function authenticate(p_email, p_password){
 
     //Trouver l'utilisateur :
-   // const user = await findOne({ email: p_email });
        const user = await findOne({ email: p_email, });
         console.log 
     if(!user) throw "Utilisateur non trouvé";

@@ -8,10 +8,8 @@
 
 <div class="login-container">
     <div class="login-box centrer">
-
-<h1>Accès refusé!</h1>
-<BoutonBrun lien={"/items"} texte={"Retour au catalogue"}/>
-
+        <h1>Accès refusé!</h1>
+        <BoutonBrun lien={"/items"} texte={"Retour au catalogue"}/>
     </div>
 </div>
 

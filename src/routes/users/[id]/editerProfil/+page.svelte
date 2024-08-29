@@ -2,8 +2,8 @@
     import BoutonSoumettre from '../../../../components/boutonSoumettre.svelte';
 	import Entete from '../../../../components/entete.svelte';
     import '/src/app.css';
+    
     export let data;
-
     const user = data.user;
 
     function effacerTexte(){
@@ -72,7 +72,4 @@
     .centrer{
         text-align: center;
     }
-
-
-
 </style>

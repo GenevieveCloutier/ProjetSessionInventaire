@@ -1,10 +1,9 @@
 <script>
     import '/src/app.css';
     import Entete from "../../../../components/entete.svelte";
-	import EnregistrerAnnuler from '../../../../components/enregistrerAnnuler.svelte';
 	import BoutonSoumettre from '../../../../components/boutonSoumettre.svelte';
-    export let data;
 
+    export let data;
     const user = data.user;
 
     function validerMDP(){
@@ -92,7 +91,4 @@
     .centrer{
         text-align: center;
     }
-
-
-
 </style>

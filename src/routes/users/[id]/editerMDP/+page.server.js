@@ -12,15 +12,16 @@ export async function load({ params }){
 		error(404, {
 			message: 'Page non trouvée'
 		})
-    } 
+  } 
 
     return { user:user };
 };
 
+//pour aller chercher les données dans le formulaire et les insérer dans la BD
 export const actions = {
     editerMDP: async ({ cookies, request }) => {
       const data = await request.formData();
       await updatePassword(data.get("user_id"), data.get("password2"));
       throw redirect(303, '/confirmation');
     }
-  }
+  };

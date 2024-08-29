@@ -1,22 +1,22 @@
-//pour bloquer la route items et ses répertoires si on est pas connecté et retourner le id de user si connecté
-
 import { redirect } from '@sveltejs/kit';
 import { findOne } from '../../lib/db/controllers/users.controller';
 
 export const load = async ({ cookies }) => {
     const session = cookies.get('session');
+    
     if (!session) {
 //redirige vers la page de connexion si l'utilisateur n'est pas connecté
         throw redirect(303, '/login');
     }
+    const user = await findOne({ userAuthToken : session });
 
-    const user = await findOne({userAuthToken : session});
-
-    if (!user) {
-        throw redirect(303, '/login');
+    if ((user.role_id != 1)) { 
+        
+//redirige si l'utilisateur n'est pas administrateur ou un chef d'équipe
+        throw redirect(303, '/accesRefuse');
     }
 
     return {
-        user 
+        user
     };
 };

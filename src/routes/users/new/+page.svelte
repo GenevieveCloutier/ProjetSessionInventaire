@@ -3,9 +3,6 @@
   import BoutonSoumettre from '../../../components/boutonSoumettre.svelte';
   import Entete from "../../../components/entete.svelte";
 
- // export let data;
-
-//const items = data.item;
 </script>
 
 <Entete/>
@@ -43,13 +40,16 @@
         <label for="role">Rôle</label>
         <select name="role" id="role" required>
           <option value="">Veuillez sélectionner</option>
-          <option value=3>Employé</option>
-          <option value=2>Chef d'équipe</option>
+          <option value=2>Employé</option>
+          <option value=3>Chef d'équipe</option>
           <option value=1>Administrateur</option>
         </select>
       </div>
       <input type="hidden" name="statut_user" id="statut_user" value="actif" required readonly>
-      <BoutonSoumettre texte={"Envoyer"} /> 
+      <div class="centrer">
+        <BoutonSoumettre texte={"Envoyer"}/>
+        <a href = "/users" ><button>Annuler</button></a>
+    </div>
     </form>
   </div>
 </div>
@@ -98,7 +98,24 @@
     border-radius: 4px;
     border: 1px solid #ccc;
   }
+  button {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 4px;
+      background-color: gray;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: center;
+    }
+  
+    button:hover {
+      background-color: #695C4B;
+    }
 
+    .centrer{
+        text-align: center;
+    }
   .submit-btn {
     width: 100%;
     padding: 0.75rem;
