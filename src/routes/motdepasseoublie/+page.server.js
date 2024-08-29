@@ -8,23 +8,25 @@ export const actions = {
         try {
             const data = await request.formData();
             const email = data.get('email');
-
+            console.log(email);
+            console.log("=================");
             // Rechercher l'utilisateur par email
-            const user = await findOne({ email });
-
+         
+           const user = await findOne({ email: data.get('email') });
+        
+            //const user = await findOne({ email: email });
+           //console.log("=================");
             if (!user) {
                 return fail(404, { error: 'Utilisateur non trouvé.' });
             }
 
             // Générer un nouveau mot de passe aléatoire
             const newPassword = Math.random().toString(36).slice(-8);
-
-            // Hacher le nouveau mot de passe
-            const hashedPassword = await bcrypt.hash(newPassword, 10);
-
+            console.log(newPassword);
+            
             // Mettre à jour le mot de passe de l'utilisateur dans la base de données
-            await updatePassword(user.id, hashedPassword);
-
+            await updatePassword(user.id, newPassword);
+            console.log("=================on a reusit");
             // Configurer Nodemailer pour envoyer un email
             const transporter = nodemailer.createTransport({
                 service: 'gmail', // ou tout autre service email
