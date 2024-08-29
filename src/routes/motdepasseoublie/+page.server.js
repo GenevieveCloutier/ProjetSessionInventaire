@@ -1,9 +1,9 @@
-//import { findOne, updatePassword } from "../../lib/db/controllers/users.controller";
-//import nodemailer from 'nodemailer';
-//import bcrypt from 'bcrypt';
-//import { redirect, fail } from '@sveltejs/kit';
+import { findOne, updatePassword } from "../../lib/db/controllers/users.controller";
+import nodemailer from 'nodemailer';
+import bcrypt from 'bcrypt';
+import { redirect, fail } from '@sveltejs/kit';
 
-/** export const actions = {
+export const actions = {
     default: async ({ request }) => {
         try {
             const data = await request.formData();
