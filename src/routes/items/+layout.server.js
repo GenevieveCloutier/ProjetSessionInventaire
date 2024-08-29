@@ -14,7 +14,12 @@ export const load = async ({ cookies }) => {
 
     if (!user) {
         throw redirect(303, '/login');
-    }
+    };
+
+    // pour s'assurer qu'un user supprimé n'a pas accès à l'application
+    if (user.statut_user === 'supprime') {
+        throw redirect(303, '/login?error=account_deleted');
+    };
 
     return {
         user 

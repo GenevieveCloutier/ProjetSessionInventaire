@@ -1,6 +1,6 @@
 
 import { redirect } from '@sveltejs/kit';
-import { findOne, findAll, validerAvantCreer } from '$lib/db/controllers/users.controller.js';
+import { findOne, findAll } from '$lib/db/controllers/users.controller.js';
 import { newUser } from '$lib/db/controllers/users.controller.js';
 
 export const actions = {

@@ -15,7 +15,12 @@ const roleAuth = [1, 3];
 
 if (!roleAuth.includes(user.role_id)) {
     throw redirect(303, '/accesRefuse');
-}
+};
+
+// pour s'assurer qu'un user supprimé n'a pas accès à l'application
+if (user.statut_user === 'supprime') {
+    throw redirect(303, '/login?error=account_deleted');
+};
 
     return {
         user

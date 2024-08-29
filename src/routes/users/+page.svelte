@@ -25,7 +25,7 @@
         <td>{user.nom}</td>
         <td>{user.role.nom}</td>
         <td>{user.statut_user}</td>
-        <td class="sansBordure"><a href = "/users/{user.id}/detailsUser"> <img src="/src/images/edit.png" alt="modifier l'utilisateur"></a></td>
+        <td class="sansBordure"><a href = "/users/{user.id}/detailsUser"> <img class="boutonEdit" src="/src/images/edit.png" alt="modifier l'utilisateur"></a></td>
     </tr>   
     {:else}
     <tr>
@@ -48,7 +48,7 @@
         border-bottom: 1px solid white;
         background-color: white;
     }
-    img{
+    .boutonEdit{
         width: 20px;
     }
 </style>

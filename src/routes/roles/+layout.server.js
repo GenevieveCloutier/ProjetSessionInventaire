@@ -11,6 +11,11 @@ export const load = async ({ cookies }) => {
     const user = await findOne({ userAuthToken : session });
 
     if (user.role_id != 1) { 
+
+// pour s'assurer qu'un user supprimé n'a pas accès à l'application
+if (user.statut_user === 'supprime') {
+    throw redirect(303, '/login?error=account_deleted');
+}
         
 //redirige si l'utilisateur n'est pas administrateur
         throw redirect(303, '/accesRefuse');

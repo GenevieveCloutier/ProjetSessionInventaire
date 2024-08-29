@@ -180,6 +180,7 @@ export async function findOne(p_where){
     });
 }
 
+
 /**
  * Authentification
  *
@@ -193,7 +194,7 @@ export async function findOne(p_where){
 
     //Trouver l'utilisateur :
        const user = await findOne({ email: p_email, });
-        console.log 
+        
     if(!user) throw "Utilisateur non trouvé";
 
     const goodPassword = await bcrypt.compare(p_password, user.password);
@@ -202,4 +203,7 @@ export async function findOne(p_where){
 
     return user;
 };
+
+
+
 

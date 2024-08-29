@@ -2,15 +2,20 @@
     import '/src/app.css';
     import EnteteVide from '../../components/enteteVide.svelte';
 
-  
-
+    //ne fonctionne pas, retourne undefined, donc le message d'erreur ne s'affiche pas...
+    export let error;
   </script>
-  
   
   <EnteteVide/>
   <div class="login-container">
     <div class="login-box">
       <h2>Connexion</h2>
+
+  
+      {#if error === 'compte_supprime'}
+        <p>Votre compte a été supprimé. Contactez l'administrateur pour plus d'informations.</p>
+      {/if}
+
       <form method="post" action="?/login">
         
         <div class="input-group">

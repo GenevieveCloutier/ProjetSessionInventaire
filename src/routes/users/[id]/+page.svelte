@@ -29,7 +29,13 @@
                 <tr>
                     <td>{location.date_emprunt}</td>
                     <td>{location.date_retour_prevue}</td>
-                    <td>{location.date_retour_effective}</td>
+
+                        {#if location.date_retour_effective == "Invalid date"}
+                            <td>À venir</td>
+                        {:else}
+                            <td>{location.date_retour_effective}</td>
+                        {/if}
+
                     <td>{location.item.nom}</td>
                     <td>{location.statut_location}</td>
                 </tr>

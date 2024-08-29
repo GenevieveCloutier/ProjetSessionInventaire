@@ -66,12 +66,8 @@
         </div>
         <div>
         <br>
-        <form method="POST" action="?/supprimerUser">
-            <input type="text" name="idUser" value={user.id} hidden>
-            <input type="text" name="statut_user" value="supprime" hidden>
-            <input type="text" name="role_id" value=4 hidden>
-            <button class="boutonSupprimer" type="submit">SUPPRIMER L'UTILISATEUR</button>
-        </form>
+        <a href="/users/{user.id}/detailsUser/validerSuppression"><button class="supprimer">Supprimer l'utilisateur</button></a>
+
     </div>
     </div>
 </div>
@@ -81,7 +77,7 @@
         text-align: center;
         padding: 10px;
     }
-    button {
+    button{
       padding: 0.75rem;
       border: none;
       border-radius: 4px;
@@ -99,11 +95,17 @@
     .centrer{
         text-align: center;
     }
-    .boutonSupprimer{
+    .supprimer{
         width: 100%;
         background-color: red;
-        color:white;
-        margin:auto;
+   
+    }
+    a{
+        text-decoration:none;
+    }
+
+        .supprimer:hover {
+            background-color: #695C4B;
     }
 
 
