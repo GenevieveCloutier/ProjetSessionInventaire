@@ -62,7 +62,13 @@
             
                 <div class="form-group">
                     <label for="categorie">Categorie</label>
-                    <input type="text" id="categorie" name="categorie" bind:value={categorie} placeholder="Entrez la catégorie" required />
+                    <select name="categorie" required>
+                        <option value="">Choisir une catégorie</option>
+                        <option value="Outil électrique">Outil électrique</option>
+                        <option value="Outil électrique">Outil pneumatique</option>
+                        <option value="Outil électrique">Outil manuel</option>
+                        <option value="Outil électrique">Divers</option>
+                    </select>
                 </div>
             
                 <div class="form-group">
