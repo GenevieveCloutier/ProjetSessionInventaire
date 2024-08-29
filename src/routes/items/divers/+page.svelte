@@ -40,7 +40,6 @@
                     <img src="../src/images/{item.image}" width="200" height="230" alt={item.nom}>
                     <h2>{item.nom}</h2>
                     <p>qty disponible: {item.quantite}</p>
-                    <!-- <p>date de disponibilité: {item.description}</p> -->
                     <h3>#{item.id}</h3>
                     <BoutonBrun lien={`../items/${item.id}`}  texte={"Louer"} />
                 </ul>

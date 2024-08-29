@@ -2,6 +2,7 @@
 
 import { findAllItemsWithoutImage, markItemAsAvailable } from '$lib/db/controllers/items.controller';
 
+
 export async function load() {
     try {
         const items = await findAllItemsWithoutImage();
