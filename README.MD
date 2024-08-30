@@ -26,4 +26,13 @@ Il sera également possible d'ajouter, de modifier et de supprimer des outils de
 
 ## Instructions d'installation
 
-À venir.
+Pour utiliser l'application:
+
+1. Accès administrateur: admin@hotmail.com
+2. Accès chef d'équipe chef@hotmail.com
+3. Accès employé employe@hotmail.com
+4. Accès compte supprimé: supp@1234@hotmail.com
+
+MPD pour tous: 1234
+
+Si l'interface semble boguer ( une page qui ne s'affiche pas, des images qui sont disproportionnées) en général, vider le cache du navigateur règle le problème.
