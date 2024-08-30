@@ -63,7 +63,6 @@ export async function findOne(p_where) {
     try {
         const item = await Items.findOne({
             where: p_where
-            //attributes: { exclude: ['image'] }  ///Pourquoi cet attribut?
         });
 
         if (!item) {
