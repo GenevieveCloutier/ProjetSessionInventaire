@@ -32,6 +32,7 @@ export async function newLocation(p_date_emprunt, p_date_retour_prevue, p_date_r
                 { quantite: item.quantite - 1 },
                 { where: { id: p_item_id }}
             );
+            console.log(item.quantite);
         }
         else {
 
@@ -41,6 +42,7 @@ export async function newLocation(p_date_emprunt, p_date_retour_prevue, p_date_r
             // messageErreurElement.textContent = "Quantité insuffisante"; 
             // messageErreurElement.hidden = false;
         }
+        console.log(resultat.dataValues);
         return resultat.dataValues;
        
     } catch (error) {
@@ -70,7 +72,9 @@ export async function findAll(){
             amende: location.amende ? location.amende.dataValues : null,
             item : location.item ? location.item.dataValues : null
         }));
+        console.log(location.dataValues);
     })
+    
     .catch((error)=>{
         throw error;
     }); 
@@ -102,6 +106,7 @@ export async function locationUser(p_where){
             amende: location.amende ? location.amende.dataValues : null,
             item : location.item ? location.item.dataValues : null
         }));
+        console.log(location.dataValues);
     })
     .catch((error)=>{
         throw error;
